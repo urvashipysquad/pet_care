@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="pet_care_form_view">
+        <field name="name">pet.care.form.view</field>
+        <field name="model">pet.care</field>
+        <field type="xml" name="arch">
+            <form string="pet.care">
+                <sheet>
+                    <group>
+                        <field name="pet_name"/>
+                        <field name="pet_mail"/>
+                        <field name="pet_type"/>
+                        <field name="gender"/>
+                        <field name="pet_size"/>
+                        <field name="pet_birthday"/>
+                        <field name="pet_weight"/>
+                        <field name="pet_weight_condition"/>
+                        <field name="pet_activity_level"/>
+                        <field name="treats"/>
+                        <field name="neutered"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="pet_care_tree_view">
+        <field name="name">pet.care.tree.view</field>
+        <field name="model">pet.care</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="pet_name"/>
+                <field name="pet_mail"/>
+                <field name="breed"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="pet_care_view">
+        <field name="name">pet.care</field>
+        <field name="res_model">pet.care</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="dog_breed_view">
+        <field name="name">dog.breed</field>
+        <field name="res_model">dog.breed</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <record model="ir.actions.act_window" id="cat_breed_view">
+        <field name="name">cat.breed</field>
+        <field name="res_model">cat.breed</field>
+        <field name="view_mode">tree,form</field>
+    </record>    
+
+
+    <menuitem id="main_menu" name="Pet Care" sequence="5"/>
+    <menuitem id="pet_care_menu" name="PET Info" action="pet_care_website.pet_care_view" parent="pet_care_website.main_menu"/>
+    <menuitem id="dog_breed_menu" name="DogBreed" action="pet_care_website.dog_breed_view" parent="pet_care_website.main_menu"/>
+    <menuitem id="cat_breed_menu" name="catBreed" action="pet_care_website.cat_breed_view" parent="pet_care_website.main_menu"/>
+</odoo>

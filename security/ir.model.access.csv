@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_pet_care,pet_care,model_pet_care,,1,1,1,1
+access_breed,breed,model_breed,,1,1,1,1
+access_dog_breed,dog_breed,model_dog_breed,,1,1,1,1
+access_cat_breed,cat_breed,model_cat_breed,,1,1,1,1

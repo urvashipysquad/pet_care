@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+   <template id="products_page" inherit_id="website_sale.products" customize_show="True" name="Select Quantity">
+      <xpath expr="//div[@id='wrap']" position="before">
+         <section class="s_banner parallax s_parallax_is_fixed pt96 pb96 o_colored_level" data-scroll-background-ratio="1" data-snippet="s_banner" data-name="Banner">
+        <span class="s_parallax_bg oe_img_bg" style="background-image: url('pet_care_website/static/img/food-2.jpg'); background-position: 20% 0;opacity: 1;"></span>
+        <div class="container">
+          <div class="row s_nb_column_fixed">
+            <div class="col-lg-6 jumbotron rounded pt96 pb96" data-name="Box">
+                    <h2 class="o_default_snippet_text">
+                           For Dogs
+                        </h2>
+                        <p class="o_default_snippet_text color-grn">No fillers. No preservatives! <br/>
+                           PawPots only uses fresh, human-grade, nutritious <br/>
+                           ingredients.
+                           For real!
+                        </p>
+<!--                <h2 class="o_default_snippet_brown_text">Sign Up to our Newsletter</h2>-->
+            </div>
+          </div>
+        </div>
+      </section>
+      </xpath>
+   </template>
+<!--    <template id="products_page_custom2" inherit_id="website_sale.products" customize_show="True" name="Select Quantity2">-->
+<!--      <xpath expr="//div[@class='products_pager']" position="replace">-->
+<!--&lt;!&ndash;            <div class="products_pager form-inline flex-md-nowrap justify-content-between justify-content-md-center">&ndash;&gt;-->
+<!--                        <t t-call="website_sale.search">-->
+<!--                            <t t-set="_classes" t-valuef="w-100 w-md-auto mt-2"/>-->
+<!--                        </t>-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--      </xpath>-->
+<!--    </template>-->
+    <template id="products_page_custom2" inherit_id="website_sale.products" customize_show="True" name="Select Quantity2">
+      <xpath expr="//div[@id='wrap']" position="after">
+<!--         <section class="food_section1 dog_food_section body-font">-->
+<!--            <div class="container px-5 py-20 mx-auto">-->
+<!--               <div class="flex flex-wrap -m-4 text-center">-->
+<!--                  <div class="p-4 sm:w-1/4 w-1/2">-->
+<!--                     <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900"><i class="fa fa-star fa-2x" style="color:#F05848;"></i></h2>-->
+<!--                     <p class="leading-relaxed col-grn">Human-grade dog food</p>-->
+<!--                  </div>-->
+<!--                  <div class="p-4 sm:w-1/4 w-1/2">-->
+<!--                     <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900"><i class='fas fa-seedling fa-2x' style="color:#93CEA1;"></i></h2>-->
+<!--                     <p class="leading-relaxed col-grn">Nothing artificial</p>-->
+<!--                  </div>-->
+<!--                  <div class="p-4 sm:w-1/4 w-1/2">-->
+<!--                     <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900"><i class="fas fa-concierge-bell fa-2x" style="color:#729FCC;"></i>     </h2>-->
+<!--                     <p class="leading-relaxed col-grn">Kettle-cooked</p>-->
+<!--                  </div>-->
+<!--                  <div class="p-4 sm:w-1/4 w-1/2">-->
+<!--                     <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900"><i class="far fa-wreath fa-2x" style="color:#F7D37B;"></i></h2>-->
+<!--                     <p class="leading-relaxed col-grn">100% satisfaction guarantee</p>-->
+<!--                  </div>-->
+<!--               </div>-->
+<!--            </div>-->
+<!--         </section>-->
+          <section class="s_cover parallax s_parallax_is_fixed bg-black-50 pt96 o_colored_level pb80" data-scroll-background-ratio="1" data-snippet="s_cover" data-name="Cover">
+            <span class="s_parallax_bg oe_img_bg" style="background-image: url('pet_care_website/static/img/about-8.jpg'); background-position: 50% 0;" />
+            <div class="o_we_bg_filter bg-black-50" />
+            <div class="container s_allow_columns">
+               <h1 style="text-align: center;">
+                  <font style="font-size: 62px; font-weight: bold;" class="o_default_snippet_brown_text">Money-Back Guarantee!</font>
+               </h1>
+               <p class="lead o_default_snippet_brown_text text-white" style="text-align: center;">
+                  Trust us, your pupp will thank you!
+                  <br class="hidden lg:display-none" />
+                  Our customers have reported not even
+                  <br class="hidden lg:display-none" />
+                  recognizing their pet after just few days!
+               </p>
+               <p style="text-align: center;">
+                  <a href="/contactus" class="button1 main_button mb-2 o_default_snippet_brown_text">Get Your Starter Box</a>
+               </p>
+            </div>
+         </section>
+         <section class="about-part-8">
+                        <div class="container s_allow_columns">
+                           <br/><br/>
+
+                           <h2 class="o_default_snippet_text" style="text-align: center;">Sign Up to our Newsletter</h2>
+                     <p class="o_default_snippet_text color-grn" style="text-align: center;">
+                        Receive exclusive access to special offers, <br class="hidden lg:display-inline"/>
+                        promotions, product updates, news and more!
+                     </p>
+
+            <form class="oe_subscribe_form sm:m-auto" role="form" t-attf-action="/web/login" method="post" onsubmit="this.action = '/web/login' + location.hash">
+               <div class="form-group field-login">
+                  <input type="login" placeholder="Email" name="login" t-att-value="login" id="login_sub" t-attf-class="form-control #{'form-control-sm' if form_small else ''}" required="required" autocapitalize="off" />
+               </div>
+               <div t-attf-class="clearfix oe_login_buttons text-center mb-1 {{'pt-0' if form_small else 'pt-2'}}">
+                  <a href="/contactus" class="button1 main_button mb-2 o_default_snippet_text">Sign Up</a>
+               </div>
+            </form>
+
+<!--               <p style="text-align: center;">-->
+<!--                  <center>-->
+<!--                     <input type="login" placeholder="Email" name="login" t-att-value="login" id="login" t-attf-class="form-control #{'form-control-sm' if form_small else ''}" required="required" autofocus="autofocus" autocapitalize="off" />-->
+
+<!--                  </center>-->
+<!--               </p>-->
+            </div>
+
+         </section>
+
+      </xpath>
+   </template>
+
+</odoo>

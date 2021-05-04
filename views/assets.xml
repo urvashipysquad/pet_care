@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="website_tours_assets_frontend" inherit_id="website.assets_frontend" name="Theme Hotel Assets Frontend">
+      <xpath expr="link[last()]" position="after">
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link rel="stylesheet" href="/pet_care_website/static/css/main.css"/>
+          <link rel="stylesheet" href="/pet_care_website/static/owlcarousel/dist/assets/owl.carousel.min.css"/>
+      <link rel="stylesheet" href="/pet_care_website/static/owlcarousel/dist/assets/owl.theme.default.min.css"/>
+                               <link href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/smart_wizard.min.css" rel="stylesheet" type="text/css" />
+<link href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/smart_wizard_theme_arrows.min.css" rel="stylesheet" type="text/css" />
+        </xpath>
+        <xpath expr="//script[last()]" position="before">
+<!--            <script src="/pet_care_website/static/owlcarousel/docs/assets/vendors/jquery.min.js"></script>-->
+<!--      <script src="/pet_care_website/static/owlcarousel/docs/assets/owlcarousel/owl.carousel.min.js"></script>-->
+<!--            <script type="text/javascript" src="/pet_care_website/static/js/main.js"/>-->
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/jquery.smartWizard.min.js"></script>
+            <script type="text/javascript" src="/pet_care_website/static/js/pet_care.js"/>
+        </xpath>
+    </template>
+<!--    <template id="assets_snippet_s_products_searchbar_js_000" inherit_id="website_sale.assets_frontend">-->
+<!--    <xpath expr="//script[last()]" position="after">-->
+<!--        <script type="text/javascript" src="/website_sale/static/src/snippets/s_products_searchbar/000.js"/>-->
+<!--    </xpath>-->
+<!--</template>-->
+</odoo>

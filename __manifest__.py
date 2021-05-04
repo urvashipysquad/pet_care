@@ -1,0 +1,31 @@
+{
+    'name': "pet_care_website",
+    'summary': "pet_care_website",
+    'description': "learning purpose app was created ",
+    'author': "pysquad",
+    'website': "py.com",
+    'category': "all",
+    'version': '14.0.1.0.0',
+    'depends': ['website', 'website_sale', 'website_blog'],
+    'data': [
+        'data/data.xml',
+        'data/dog_breed.xml',
+        'views/assets.xml',
+        'views/login_template.xml',
+        'views/main_template.xml',
+        'views/home_template.xml',
+        'views/products_template.xml',
+        'views/about_template.xml',
+        'views/why_fresh_template.xml',
+        'views/reviews_template.xml',
+        'views/faq_template.xml',
+        'views/pet_care_view.xml',
+        'views/pet_form.xml',
+        'views/pet_care_form.xml',
+        'security/ir.model.access.csv',
+
+    ],
+    'demo': [],
+    'installable': True,
+    'application': True
+ }

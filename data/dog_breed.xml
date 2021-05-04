@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+<!--    DOG BREED -->
+
+    <record id="dog_breed_1" model="dog.breed">
+        <field name="name">Cavachon</field>
+        <field name="description">It's Cavalier King Charles Spaniel and Bichon Frise smushed together – a perfectly adorable mash-up for a perfectly adorable fluffball.</field>
+    </record>
+    <record id="dog_breed_2" model="dog.breed">
+        <field name="name">Siberian Retriever</field>
+        <field name="description">ILabs have reigned supreme as the most popular dog breed for nearly 30 years now, so it's no surprise their prized traits also frequently appear in mixed breeds. This combo with a Siberian Husky is slightly smaller than its purebred cousins.</field>
+    </record>
+    <record id="dog_breed_3" model="dog.breed">
+        <field name="name">Chiweenie</field>
+        <field name="description">The only thing cuter than the name is the actual dog itself. This pint-size hybrid has the intelligence of a chihuahua and the spirited nature of a Dachshund.        </field>
+    </record>
+    <record id="dog_breed_4" model="dog.breed">
+        <field name="name">Weimador</field>
+        <field name="description">Weimaraners possess trademark silvery-gray coats, but combine one with a Labrador retriever and you'll see them in a variety of glossy colors. With two athletic parents, these pups can exhibit boundless energy yet a friendly temperament</field>
+    </record>
+    <record id="dog_breed_5" model="dog.breed">
+        <field name="name">Shorkie</field>
+        <field name="description">You can easily scoop up a Shorkie — a Shih Tzu and Yorkshire terrier hybrid — with one arm for a quick cuddle. They typically weigh less than 15 pounds.</field>
+    </record>
+    <record id="dog_breed_6" model="dog.breed">
+        <field name="name">Border Collie-Sheltie</field>
+        <field name="description">Though they don't have a fun name just yet, the border collie-Shetland sheepdog combo is one of our favorite mixed breeds. They're gentle, athletic, and oh-so photogenic.</field>
+    </record>
+    <record id="dog_breed_7" model="dog.breed">
+        <field name="name">Pomsky</field>
+        <field name="description">While they can vary within the same litter, think of Pomskies as smaller, fluffier Siberian Huskies thanks to their Pomeranian DNA. These little guys usually weigh between 20 and 30 pounds.</field>
+    </record>
+    <record id="dog_breed_8" model="dog.breed">
+        <field name="name">Yorkipoo</field>
+        <field name="description">Clocking in at 15 pounds or less, Yorkshire terrier-poodle crosses marry the best of both worlds. These clever and playful companions get the benefit of hypoallergenic coats from both of their parents.</field>
+    </record>
+    <record id="dog_breed_9" model="dog.breed">
+        <field name="name">Corgidor</field>
+        <field name="description">Take a Welsh Corgi and a Labrador Retriever, and you end up with a medium-weight, somewhat short-legged dog. Knowing what type of Corgi parent your pup had can also provide valuable info, as Cardigan Welsh Corgis get bigger than the Pembroke kind.</field>
+    </record>
+    <record id="dog_breed_10" model="dog.breed">
+        <field name="name">Cockapoo</field>
+        <field name="description">The Cockapoo (part cocker spaniel, part poodle) is one of the most popular mixed-breed dogs. They aren't prone to shedding and can be easily trained, making them a great choice for families.</field>
+    </record>
+    <record id="dog_breed_11" model="dog.breed">
+        <field name="name">Chug</field>
+        <field name="description">It might not be the most elegant name, but the Chug (a chihuahua-pug mix) is certainly interesting! They are the perfect size for cuddling in your lap, which has made this mixed breed more and more popular.</field>
+    </record>
+    <record id="dog_breed_12" model="dog.breed">
+        <field name="name">Morkie</field>
+        <field name="description">Morkies are a seriously cute cross between a Maltese and a Yorkshire terrier. They're small, but certainly not timid! Morkies tend to love attention and stay protective of their families.</field>
+    </record>
+    <record id="dog_breed_13" model="dog.breed">
+        <field name="name">Shih-Poo</field>
+        <field name="description">A charming cross between a Shih Tzu and a poodle, the Shih-poo has plenty of personality. They tend to be a bit stubborn, but when you look at that little face, you just can't be mad. Shih-poos can have curlier fur (reflecting their poodle heritage), but they can also have silky fur (from their Shih Tzu background).</field>
+    </record>
+    <record id="dog_breed_14" model="dog.breed">
+        <field name="name">Schnoodle</field>
+        <field name="description">Schnoodle are another great poodle hybrid. This time, the cross is with a schnauzer. Smart and playful, this mix can really run the gamut between teeny lapdogs and huge 70-plus pounders (just like poodles).</field>
+    </record>
+    <record id="dog_breed_15" model="dog.breed">
+        <field name="name">Goldendoodle</field>
+        <field name="description">This very popular crossbreed is half Golden Retriever and half poodle. If you're lucky enough to own one, you'll have a loyal friend who is always up for some playtime.</field>
+    </record>
+    <record id="dog_breed_16" model="dog.breed">
+        <field name="name">Whoodle</field>
+        <field name="description">Though the name sounds like it came from a Dr. Seuss book, Whoodles (like Cormac!) are very much real. They're a blend of the Wheaten terrier and a poodle with a unique coat that's also hypoallergenic.</field>
+    </record>
+    <record id="dog_breed_17" model="dog.breed">
+        <field name="name">Mastiff Mix</field>
+        <field name="description">You might be pleasantly surprised to learn that Mastiff mixes are known for having a gentle disposition. The phrase "gentle giant" most certainly comes to mind.</field>
+    </record>
+    <record id="dog_breed_18" model="dog.breed">
+        <field name="name">Docker</field>
+        <field name="description">The fabulous Fleur, is a little bit Dachshund and little bit cocker spaniel. Medium in size, these fun crossbreeds are surprisingly athletic and can be trained to do everything from sighting to military work.</field>
+    </record>
+
+<!--    CAT BREED  -->
+
+    <record id="cat_breed_1" model="cat.breed">
+        <field name="name">British Shorthair</field>
+        <field name="description">The British Shorthair is the pedigreed version of the traditional British domestic cat, with a distinctively stocky body, dense coat, and broad face. The most familiar colour variant is the "British Blue", with a solid grey-blue coat, orange eyes, and a medium-sized tail.</field>
+    </record>
+    <record id="cat_breed_2" model="cat.breed">
+        <field name="name">Persian cat</field>
+        <field name="description">The Persian cat is a long-haired breed of cat characterized by its round face and short muzzle. It is also known as the "Persian Longhair" in the English-speaking countries. The first documented ancestors of the Persian were imported into Italy from Persia around 1620</field>
+    </record>
+    <record id="cat_breed_3" model="cat.breed">
+        <field name="name">Maine Coon</field>
+        <field name="description">The Maine Coon is a large domesticated cat breed. It has a distinctive physical appearance and valuable hunting skills. It is one of the oldest natural breeds in North America, specifically native to the US state of Maine, where it is the official state cat.</field>
+    </record>
+    <record id="cat_breed_4" model="cat.breed">
+        <field name="name">Bengal cat</field>
+        <field name="description">The Bengal cat is a domesticated cat breed created from hybrids of domestic cats, especially the spotted Egyptian Mau, with the Asian leopard cat. The breed name comes from the leopard cat's taxonomic name.</field>
+    </record>
+    <record id="cat_breed_5" model="cat.breed">
+        <field name="name">Abyssinian cat</field>
+        <field name="description">The Abyssinian is a breed of domestic short-haired cat with a distinctive "ticked" tabby coat, in which individual hairs are banded with different colors. In nomenclature terms, they are also known as simply Abys. The breed is named for Abyssinia, where it is believed to have originated. </field>
+    </record>
+    <record id="cat_breed_6" model="cat.breed">
+        <field name="name">Exotic Shorthair</field>
+        <field name="description">The Exotic Shorthair is a breed of cat developed as a short-haired version of the Persian. The Exotic is similar to the Persian in many ways, including temperament and conformation, a flat nose and face with the exceptions of the short dense coat. </field>
+    </record>
+    <record id="cat_breed_7" model="cat.breed">
+        <field name="name">Japanese Bobtail</field>
+        <field name="description">The Japanese Bobtail is a breed of domestic cat with an unusual bobtail more closely resembling the tail of a rabbit than that of other cats. The variety is native to Japan and Southeast Asia, though it is now found throughout the world.</field>
+    </record>
+    <record id="cat_breed_8" model="cat.breed">
+        <field name="name">Egyptian Mau</field>
+        <field name="description">Egyptian Maus are a small to medium-sized short-haired cat breed. They are one of the few naturally spotted breeds of domesticated cat. The spots of the Mau occur on only the tips of the hairs of its coat. It is considered a rare breed.</field>
+    </record>
+    <record id="cat_breed_9" model="cat.breed">
+        <field name="name">Lykoi</field>
+        <field name="description">The Lykoi is a natural mutation from a domestic shorthair that looks like the popular idea of a werewolf. The mutation has occurred in domestic cats over the last 20 years. DNA testing has been done by UC Davis to confirm that the cats do not carry the Sphynx/Devon Rex gene.</field>
+    </record>
+</odoo>
