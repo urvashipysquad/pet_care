@@ -23,8 +23,9 @@ class MainAction(http.Controller):
 
     @http.route('/', website=True, auth="public", type='http')
     def dog_home(self, **kw):
+        dog_breed = request.env['dog.breed'].sudo().search([])
         print(" ************************** main")
-        return request.render('pet_care_website.home_page', {})
+        return request.render('pet_care_website.home_page', {'dog_breed': dog_breed})
 
     @http.route('/about', website=True, auth="public", type='http')
     def dog_about(self, **kw):
@@ -48,17 +49,17 @@ class MainAction(http.Controller):
 
 
 class PetInfo(http.Controller):
-    @http.route('/pet_webform_work', website=True, auth="public", type='http')
+    @http.route('/pet_webform', website=True, auth="public", type='http')
     def pet_webform(self, **kw):
         dog_breed = request.env['dog.breed'].sudo().search([])
         # pet_weight = request.env['pet.weight'].sudo().search([])
         print('>>>>>>>>>>>>>>>>> breed', dog_breed)
 
-        return request.render('pet_care_website.pet_webform_work', {'dog_breed': dog_breed})
-
-    @http.route('/pet_care_form', website=True, auth='public', type='http')
-    def pet_care_form(self,*kw):
-        return request.render('pet_care_website.pet_care_form',{})
+        return request.render('pet_care_website.pet_webform', {'dog_breed': dog_breed})
+        #
+        # @http.route('/pet_care_form', website=True, auth='public', type='http')
+        # def pet_care_form(self,*kw):
+        #     return request.render('pet_care_website.pet_care_form',{})
 
     @http.route('/create/pet', website=True, auth="public", type='http')
     def pet_info_create(self, **kw):

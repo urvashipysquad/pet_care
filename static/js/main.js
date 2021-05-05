@@ -1,15 +1,15 @@
-////$(document).ready(function(){
-////$(".owl-carousel").owlCarousel({
-////  loop:true,
-////  items: 3,
-////    autoplay: true,
-////    autoPlaySpeed: 100,
-////    dots:true,
-////    autoPlayTimeout: 100,
-////    autoplayHoverPause: true,
-////    center: true,
-//// });
-////});
+$(document).ready(function(){
+$(".owl-carousel").owlCarousel({
+  loop:true,
+  items: 3,
+    autoplay: true,
+    autoPlaySpeed: 100,
+    dots:true,
+    autoPlayTimeout: 100,
+    autoplayHoverPause: true,
+    center: true,
+ });
+});
 //
 ////
 //$('.owl-carousel').owlCarousel({

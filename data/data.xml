@@ -33,19 +33,6 @@
             <field name="parent_id" ref="website.main_menu"/>
             <field name="sequence" type="int">15</field>
         </record>
-        <record id="menu_pet_form" model="website.menu">
-            <field name="name">pet form</field>
-            <field name="url">/pet_webform</field>
-            <field name="parent_id" ref="website.main_menu"/>
-            <field name="sequence" type="int">15</field>
-        </record>
-        <record id="menu_pet_care_form" model="website.menu">
-            <field name="name">pet care form</field>
-            <field name="url">/pet_care_form</field>
-            <field name="parent_id" ref="website.main_menu"/>
-            <field name="sequence" type="int">1</field>
-        </record>
-
         <delete model="website.menu" id="website.menu_contactus"/>
     </data>
 </odoo>

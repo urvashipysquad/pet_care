@@ -177,11 +177,16 @@ input#last_name::placeholder,input#phone::placeholder,input#confirm_password::pl
 	font-size: 1rem;
 	font-weight: bold;
 }
-/*
+
 label {
 	display: none;
 	margin: 9px;
-}*/
+}
+
+.form-check-label
+{
+display: inline;
+}
 
 button.btn.btn-primary.btn-block,button.oe_login_buttons {
 	color: white;
@@ -285,11 +290,27 @@ section.about-header-section {
     margin: 1.8rem 1rem;
     }
 }
+@media (max-width: 500.98px) {
+	p.o_default_snippet_text.color-grn,h2.o_default_snippet_text {
+    text-align: center;
+}
+}
 h2.o_default_snippet_text{
 color: #18433A;
 	font-weight: bolder;
 	}
+.s_text_highlight.my-3.text-center.w-100.o_colored_level,s_rating_title{
+background:#F05848;
+color:white;
+}.s_text_highlight.my-3.text-center.w-100.o_colored_level:hover{
+color:#F05848;
+background:#F5F4F6;
+transition: 1.0s;
+}
 
+.card.bg-white.h-100:hover {
+    width: 260px;
+}
 h2.o_default_snippet_brown_text{
 color: #30180B;
 	font-weight: bolder;
@@ -304,7 +325,7 @@ color: #30180B;
 	}
 
 
-.button1 {
+.button1,button.btn.btn-secondary.sw-btn-next{
   background-color: #F05848; /* Green */
   border: none;
   color: white;
@@ -317,7 +338,10 @@ color: #30180B;
   transition-duration: 0.4s;
   cursor: pointer;
 }
-
+button.btn.btn-secondary.sw-btn-prev {
+    display: none;}
+button.btn.btn-secondary.sw-btn-next.disabled {
+display:none}
 .main_button {
   background-color:  #F05848;
   color: white;
@@ -473,7 +497,7 @@ transform:translate3d(0px,-50px,0px) scale(0.7);
 }
 
 .btn-secondary:focus {
-    box-shadow: 0 0 0 0rem rgba(108, 117, 125, .5)
+    box-shadow: 0 0 0 0rem green
 }
 
 .close:focus {
@@ -483,3 +507,7 @@ transform:translate3d(0px,-50px,0px) scale(0.7);
 .mt-200 {
     margin-top: 200px
 }
+
+
+.st0{fill:#FFFFFF;}
+.st1{fill:#F05848;}

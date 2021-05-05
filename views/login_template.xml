@@ -63,7 +63,6 @@
          </div>
       </xpath>
       <xpath expr="//label[@for='name']" position="replace" />
-
       <xpath expr="//input[@name='name']" position="after">
          <div class="form-group field-phone" style="padding:0;margin:0">
             <input type="text" name="phone" t-att-value="phone" id="phone" class="form-control form-control-sm" placeholder="phone" t-att-readonly="'readonly' if only_passwords else None" />

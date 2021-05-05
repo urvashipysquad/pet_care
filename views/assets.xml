@@ -12,10 +12,11 @@
         </xpath>
         <xpath expr="//script[last()]" position="before">
 <!--            <script src="/pet_care_website/static/owlcarousel/docs/assets/vendors/jquery.min.js"></script>-->
-<!--      <script src="/pet_care_website/static/owlcarousel/docs/assets/owlcarousel/owl.carousel.min.js"></script>-->
+      <script src="/pet_care_website/static/owlcarousel/docs/assets/owlcarousel/owl.carousel.min.js"></script>
 <!--            <script type="text/javascript" src="/pet_care_website/static/js/main.js"/>-->
             <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/jquery.smartWizard.min.js"></script>
             <script type="text/javascript" src="/pet_care_website/static/js/pet_care.js"/>
+            <script type="text/javascript" src="/pet_care_website/static/js/main.js"/>
         </xpath>
     </template>
 <!--    <template id="assets_snippet_s_products_searchbar_js_000" inherit_id="website_sale.assets_frontend">-->
