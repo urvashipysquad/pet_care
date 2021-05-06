@@ -17,9 +17,14 @@ class PetCare(models.Model):
     pet_birthday = fields.Date(string="pet birthdate")
     pet_weight = fields.Integer(string="pet weight")
     pet_weight_condition = fields.Selection([('skinny', 'Skinny'), ('just_right', 'Just Right'), ('chubby', 'Chubby')], 'Pet Size')
-    pet_activity_level = fields.Selection([('couch_potato', 'couch potato'), ('somewhat_active', 'somewhat active'), ('active', 'active'), ('very_active', 'very active'), ('energy ball', 'energy ball')])
+    pet_activity_level = fields.Selection([('couch_potato', 'couch potato'), ('somewhat_active', 'somewhat active'), ('active', 'active'), ('very_active', 'very active'), ('energy_ball', 'energy ball')])
     treats = fields.Selection([('no_treats', 'No treats'), ('some_treats', 'Some treats'), ('lots_of_treats', 'Lots of treats')])
     neutered = fields.Selection([('yes', 'Yes'), ('no', 'No')])
+    user_firstname = fields.Char("First Name")
+    user_lastname = fields.Char("Last Name")
+    user_phone = fields.Char("Phone")
+    user_email = fields.Char("Email")
+    user_pwd = fields.Char("Password")
 
 
 class Breed(models.Model):
@@ -41,3 +46,4 @@ class CatBreed(Breed):
 
     name = fields.Char("Cats Breed")
     description = fields.Text("Information")
+

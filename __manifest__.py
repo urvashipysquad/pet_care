@@ -20,8 +20,9 @@
         'views/reviews_template.xml',
         'views/faq_template.xml',
         'views/pet_care_view.xml',
-        'views/pet_form.xml',
-        'views/pet_care_form.xml',
+        # 'views/pet_custom.xml',
+        # 'views/pet_form.xml',
+        # 'views/pet_care_form.xml',
         'security/ir.model.access.csv',
 
     ],

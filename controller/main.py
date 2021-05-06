@@ -12,10 +12,15 @@ class WebsiteSaleInherited(WebsiteSale):
         '''/shop/page/<int:page>''',
         '''/shop/category/<model("product.public.category"):category>''',
         '''/shop/category/<model("product.public.category"):category>/page/<int:page>'''
-    ], type='http', auth="user", website=True)
+    ], type='http', auth="public", website=True)
     def shop(self, page=0, category=None, search='', ppg=False, **post):
         print('>>>>>>>>>>>>>>>>>>>>> working  controllser')
         rtn = super(WebsiteSaleInherited, self).shop(page=0, category=None, search='', ppg=False, **post)
+        return rtn
+
+    @http.route(['/shop/cart'], type='http', auth="user", website=True, sitemap=False)
+    def cart(self, access_token=None, revive='', **post):
+        rtn = super(WebsiteSaleInherited, self).cart(access_token=None, revive='', **post)
         return rtn
 
 
@@ -47,22 +52,23 @@ class MainAction(http.Controller):
         print(" ************************** reviews_page")
         return request.render('pet_care_website.reviews_page', {})
 
-
-class PetInfo(http.Controller):
-    @http.route('/pet_webform', website=True, auth="public", type='http')
-    def pet_webform(self, **kw):
-        dog_breed = request.env['dog.breed'].sudo().search([])
-        # pet_weight = request.env['pet.weight'].sudo().search([])
-        print('>>>>>>>>>>>>>>>>> breed', dog_breed)
-
-        return request.render('pet_care_website.pet_webform', {'dog_breed': dog_breed})
-        #
-        # @http.route('/pet_care_form', website=True, auth='public', type='http')
-        # def pet_care_form(self,*kw):
-        #     return request.render('pet_care_website.pet_care_form',{})
+    # @http.route('/food_define', website=True, auth="public", type='http')
+    # def food_define(self, **kw):
+    #     print(" ************************** food_define")
+    #     return request.render('pet_care_website.food_define', {})
 
     @http.route('/create/pet', website=True, auth="public", type='http')
     def pet_info_create(self, **kw):
         print('>>>>>>>>>>>>>>>>>>>>>> pet_thankyou_page ', kw)
         request.env['pet.care'].sudo().create(kw)
         return request.render('pet_care_website.pet_thankyou_page', {})
+
+
+# class PetInfo(http.Controller):
+#     @http.route('/pet_webform', website=True, auth="public", type='http')
+#     def pet_webform(self, **kw):
+#         dog_breed = request.env['dog.breed'].sudo().search([])
+#         # pet_weight = request.env['pet.weight'].sudo().search([])
+#         print('>>>>>>>>>>>>>>>>> breed', dog_breed)
+#         return request.render('pet_care_website.pet_webform', {'dog_breed': dog_breed})
+

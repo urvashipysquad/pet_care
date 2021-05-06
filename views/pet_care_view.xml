@@ -18,6 +18,11 @@
                         <field name="pet_activity_level"/>
                         <field name="treats"/>
                         <field name="neutered"/>
+                        <field name="user_firstname"/>
+                        <field name="user_lastname" invisible="1"/>
+                        <field name="user_phone" invisible="1"/>
+                        <field name="user_email" invisible="1"/>
+                        <field name="user_pwd" password="True" invisible="1"/>
                     </group>
                 </sheet>
             </form>
@@ -50,8 +55,7 @@
         <field name="name">cat.breed</field>
         <field name="res_model">cat.breed</field>
         <field name="view_mode">tree,form</field>
-    </record>    
-
+    </record>
 
     <menuitem id="main_menu" name="Pet Care" sequence="5"/>
     <menuitem id="pet_care_menu" name="PET Info" action="pet_care_website.pet_care_view" parent="pet_care_website.main_menu"/>
