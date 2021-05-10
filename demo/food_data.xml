@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+
+    <!-- Image Lines -->
+
+    <record id="config_image_1" model="product.config.image">
+        <field name="name">Coupé Red</field>
+        <field name="product_tmpl_id" ref="bmw_2_series"/>
+        <field name="image_1920" type="base64" file="pet_care_website/static/img/61LkP1i0m4L._AC_SS450_.jpg"/>
+        <field name="value_ids" eval="[(6,0,[
+            ref('product_attribute_value_red')
+        ])]"/>
+    </record>
+
+    <record id="config_image_2" model="product.config.image">
+        <field name="name">Coupé Silver</field>
+        <field name="product_tmpl_id" ref="bmw_2_series"/>
+        <field name="image_1920" type="base64" file="pet_care_website/static/img/dog-food-500x500.jpg"/>
+        <field name="value_ids" eval="[(6,0,[
+            ref('product_attribute_value_silver')
+        ])]"/>
+    </record>
+</data>
+</odoo>

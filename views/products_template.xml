@@ -15,51 +15,132 @@
                            ingredients.
                            For real!
                         </p>
-<!--                <h2 class="o_default_snippet_brown_text">Sign Up to our Newsletter</h2>-->
             </div>
           </div>
         </div>
       </section>
       </xpath>
    </template>
-<!--    <template id="products_page_custom2" inherit_id="website_sale.products" customize_show="True" name="Select Quantity2">-->
-<!--      <xpath expr="//div[@class='products_pager']" position="replace">-->
-<!--&lt;!&ndash;            <div class="products_pager form-inline flex-md-nowrap justify-content-between justify-content-md-center">&ndash;&gt;-->
-<!--                        <t t-call="website_sale.search">-->
-<!--                            <t t-set="_classes" t-valuef="w-100 w-md-auto mt-2"/>-->
-<!--                        </t>-->
-<!--&lt;!&ndash;            </div>&ndash;&gt;-->
-<!--      </xpath>-->
-<!--    </template>-->
+    <template id="products_page_searchbar" inherit_id="website_sale.products" customize_show="True" name="Select Quantity">
+      <xpath expr="//div[@class='products_pager form-inline flex-md-nowrap justify-content-between justify-content-md-center']" position="replace">
+          <div class="row">
+              <div class="col-md-2">
+                  <div class="btn-group btn-group-toggle mt-2 ml-md-2 d-none d-sm-inline-flex o_wsale_apply_layout" data-toggle="buttons">
+                    <label title="Grid" class="btn bg-white active fa fa-th-large o_wsale_apply_grid" style="color:#F05848;font-size: x-large;">
+                        <input type="radio" name="wsale_products_layout" checked="checked"/>
+                    </label>
+                    <label title="List" class="btn bg-white  fa fa-th-list o_wsale_apply_list" style="color:#F05848;font-size: x-large;">
+                        <input type="radio" name="wsale_products_layout"/>
+                    </label>
+                  </div>
+              </div>
+              <div class="col-md-4 text-left mt-3">
+                  <t t-call="website_sale.search">
+                      <t t-set="_classes" t-valuef="w-20 w-md-auto mt-2"/>
+                  </t>
+</div>
+              <div class="col-md-5 text-right mt-3">
+                  <t t-call="website_sale.pricelist_list">
+                            <t t-set="_classes" t-valuef="mt-2 ml-md-2"/>
+                        </t>
+</div>
+          </div>
+
+      </xpath>
+    </template>
+    <template id="products_page_pager" inherit_id="website_sale.products" customize_show="True" name="Select page">
+      <xpath expr="//div[@class='products_pager form-inline justify-content-center py-3']" position="replace">
+          <div class="row">
+              <div class="col-md-12 float-left m-3">
+                  <t t-call="website.pager"/>
+              </div>
+          </div>
+
+      </xpath>
+    </template>
+
+    <template id="add_website_product_item" inherit_id="website_sale.products_item" customize_show="True" name="Dynamic Add To Cart">
+		<xpath expr="//form[@action='/shop/cart/update']" method="post" position="replace">
+            <form action="/shop/cart/update" method="post" class="card oe_product_cart"
+            t-att-data-publish="product.website_published and 'on' or 'off'"
+            itemscope="itemscope" itemtype="http://schema.org/Product">
+            <div class="card-body p-1 oe_product_image">
+                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                <a t-att-href="product_href" class="d-block h-100" itemprop="url">
+                    <t t-set="image_holder" t-value="product._get_image_holder()"/>
+                    <span t-field="image_holder.image_1920"
+                        t-options="{'widget': 'image', 'preview_image': 'image_1024' if product_image_big else 'image_256'}"
+                        class="d-flex h-100 justify-content-center align-items-center"/>
+                </a>
+            </div>
+            <div class="card-body p-0 text-center o_wsale_product_information">
+                <div class="p-2 o_wsale_product_information_text">
+                    <div class="row">
+                        <div class="col-md-9 text-center">
+
+                    <h6 class="o_wsale_products_item_title">
+                        <a itemprop="name" t-att-href="product_href" t-att-content="product.name" t-field="product.name" style="color:#F05848;font-weight: bolder;"/>
+                        <a role="button" t-if="not product.website_published" t-att-href="product_href" class="btn btn-sm btn-danger" title="This product is unpublished.">Unpublished</a>
+                    </h6>
+                    <div class="product_price" itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer" style="color:#F05848;font-weight: bolder;">
+                        <del t-attf-class="text-danger mr-2 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;" t-esc="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
+                        <span t-if="combination_info['price']" t-esc="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                        <span itemprop="price" style="display:none;" t-esc="combination_info['price']" />
+                        <span itemprop="priceCurrency" style="display:none;" t-esc="website.currency_id.name" />
+                    </div>
+
+                        </div>
+                        <div class="col-md-3" style="color:#F05848;">
+                            <t t-if="not user_id._is_public()">
+                        <input name="product_id" t-att-value="product.product_variant_ids[0].id" type="hidden"/>
+                        <div name="dynamic_add_to_cart">
+							<t t-set="products" t-value="website.add_website_product(product.product_variant_ids[0].id)"/>
+						    <button type="submit" class="btn btn-default btn-xs fa fa-shopping-cart a-submit" t-if="not products" t-att-row="product.product_variant_ids[0].id"/>
+                        </div>
+                        </t>
+                        </div>
+                    </div>
+                </div>
+                <div class="o_wsale_product_btn"/>
+            </div>
+            <t t-set="bg_color" t-value="td_product['ribbon']['bg_color'] or ''"/>
+            <t t-set="text_color" t-value="td_product['ribbon']['text_color']"/>
+            <t t-set="bg_class" t-value="td_product['ribbon']['html_class']"/>
+            <span t-attf-class="o_ribbon #{bg_class}" t-attf-style="#{text_color and ('color: %s; ' % text_color)}#{bg_color and 'background-color:' + bg_color}" t-raw="td_product['ribbon']['html'] or ''"/>
+        </form>
+        </xpath>
+    </template>
+
     <template id="products_page_custom2" inherit_id="website_sale.products" customize_show="True" name="Select Quantity2">
       <xpath expr="//div[@id='wrap']" position="after">
-<!--         <section class="food_section1 dog_food_section body-font">-->
-<!--            <div class="container px-5 py-20 mx-auto">-->
-<!--               <div class="flex flex-wrap -m-4 text-center">-->
-<!--                  <div class="p-4 sm:w-1/4 w-1/2">-->
-<!--                     <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900"><i class="fa fa-star fa-2x" style="color:#F05848;"></i></h2>-->
-<!--                     <p class="leading-relaxed col-grn">Human-grade dog food</p>-->
-<!--                  </div>-->
-<!--                  <div class="p-4 sm:w-1/4 w-1/2">-->
-<!--                     <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900"><i class='fas fa-seedling fa-2x' style="color:#93CEA1;"></i></h2>-->
-<!--                     <p class="leading-relaxed col-grn">Nothing artificial</p>-->
-<!--                  </div>-->
-<!--                  <div class="p-4 sm:w-1/4 w-1/2">-->
-<!--                     <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900"><i class="fas fa-concierge-bell fa-2x" style="color:#729FCC;"></i>     </h2>-->
-<!--                     <p class="leading-relaxed col-grn">Kettle-cooked</p>-->
-<!--                  </div>-->
-<!--                  <div class="p-4 sm:w-1/4 w-1/2">-->
-<!--                     <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900"><i class="far fa-wreath fa-2x" style="color:#F7D37B;"></i></h2>-->
-<!--                     <p class="leading-relaxed col-grn">100% satisfaction guarantee</p>-->
-<!--                  </div>-->
-<!--               </div>-->
-<!--            </div>-->
-<!--         </section>-->
+          <section class="s_references pt48 o_colored_level pb0" data-snippet="s_references" data-name="References" style="">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-2 pt16 pb16 o_colored_level">
+              <img src="/pet_care_website/static/img/Food 1.png" class="img img-fluid mx-auto" alt="grediant-images"/>
+            </div>
+            <div class="col-lg-3 pt16 pb16 o_colored_level">
+              <img src="/pet_care_website/static/img/Food 2.png" class="img img-fluid mx-auto" alt="grediant-images"/>
+            </div>
+            <div class="col-lg-2 pt16 pb16 o_colored_level">
+              <img src="/pet_care_website/static/img/Food 3.png" class="img img-fluid mx-auto" alt="grediant-images"/>
+            </div>
+            <div class="col-lg-3 pt16 pb16 o_colored_level">
+              <img src="/pet_care_website/static/img/Food 4.png" class="img img-fluid mx-auto" alt="grediant-images"/>
+            </div>
+            <div class="col-lg-2 pt16 pb16 o_colored_level">
+              <img src="/pet_care_website/static/img/Food 5.png" class="img img-fluid mx-auto" alt="grediant-images"/>
+            </div>
+          </div>
+        </div>
+      </section>
           <section class="s_cover parallax s_parallax_is_fixed bg-black-50 pt96 o_colored_level pb80" data-scroll-background-ratio="1" data-snippet="s_cover" data-name="Cover">
             <span class="s_parallax_bg oe_img_bg" style="background-image: url('pet_care_website/static/img/about-8.jpg'); background-position: 50% 0;" />
             <div class="o_we_bg_filter bg-black-50" />
             <div class="container s_allow_columns">
-               <h1 style="text-align: center;">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h1 style="text-align: center;">
                   <font style="font-size: 62px; font-weight: bold;" class="o_default_snippet_brown_text">Money-Back Guarantee!</font>
                </h1>
                <p class="lead o_default_snippet_brown_text text-white" style="text-align: center;">
@@ -72,9 +153,14 @@
                <p style="text-align: center;">
                   <a href="/contactus" class="button1 main_button mb-2 o_default_snippet_brown_text">Get Your Starter Box</a>
                </p>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+
             </div>
          </section>
-         <section class="about-part-8">
+          <t t-if="user_id._is_public()">
+              <section class="about-part-8">
                         <div class="container s_allow_columns">
                            <br/><br/>
 
@@ -92,17 +178,10 @@
                   <a href="/contactus" class="button1 main_button mb-2 o_default_snippet_text">Sign Up</a>
                </div>
             </form>
-
-<!--               <p style="text-align: center;">-->
-<!--                  <center>-->
-<!--                     <input type="login" placeholder="Email" name="login" t-att-value="login" id="login" t-attf-class="form-control #{'form-control-sm' if form_small else ''}" required="required" autofocus="autofocus" autocapitalize="off" />-->
-
-<!--                  </center>-->
-<!--               </p>-->
             </div>
 
          </section>
-
+          </t>
       </xpath>
    </template>
 

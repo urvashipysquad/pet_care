@@ -304,6 +304,7 @@ Mon - Fri (10am - 5pm EST)                  </p>
                </p>
             </div>
          </section>
+        <t t-if="user_id._is_public()">
          <section class="signup-part">
                         <div class="container s_allow_columns">
                            <br/><br/>
@@ -332,6 +333,7 @@ Mon - Fri (10am - 5pm EST)                  </p>
             </div>
 
          </section>
+        </t>
       </t>
     </template>
 </odoo>

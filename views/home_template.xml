@@ -488,8 +488,10 @@
          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
                <div class="modal-content">
-                  <div class="modal-header">
-                     <h5 class="modal-title" id="exampleModalLabel" t-foreach="docs" t-as="o"><img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" alt="Logo" height="40" widget="78"/> working</h5>
+                  <div class="modal-header" style="padding:0px">
+                     <div class="text-center">
+                        <img t-attf-src="/web/binary/company_logo?company={{ res_company.id }}" width="100px"/>
+                    </div>
                      <!--                   <t >-->
                      <!--                    <img t-if="o.company_id.logo" id="exampleModalLabel" t-att-src="image_data_uri(o.company_id.logo)" alt="Logo" height="100" widget="50%"/>-->
                      <!--                   </t>-->
@@ -792,7 +794,7 @@
                                     </div>
                                        </div>
                                  </div>
-                              </div>
+                               </div>
                               <div id="step-4" class="">
                                  <div class="row">
                                     <div class="col-md-6">
@@ -929,6 +931,9 @@ Skip the stores
             </div>
         </div>
     </section>
+                  <style>
+                     footer#bottom { display: none; }
+                  </style>
             </div>
             </t>
          </t>

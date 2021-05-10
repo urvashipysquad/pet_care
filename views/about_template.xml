@@ -245,6 +245,7 @@
                </p>
             </div>
          </section>
+         <t t-if="user_id._is_public()">
          <section class="about-part-8">
                         <div class="container s_allow_columns">
                            <br/><br/>
@@ -266,6 +267,7 @@
             </div>
 
          </section>
+         </t>
       </t>
    </template>
 </odoo>
