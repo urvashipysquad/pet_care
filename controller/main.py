@@ -29,8 +29,13 @@ class MainAction(http.Controller):
     @http.route('/', website=True, auth="public", type='http')
     def dog_home(self, **kw):
         dog_breed = request.env['dog.breed'].sudo().search([])
+        # if product_name:
+        #     domain += [('name', 'ilike', product_name)]
+        products = request.env['product.template'].sudo().search([])
+        instagram = request.env['instagram.post'].sudo().search([])
+        img_content = request.env['image.content'].sudo().search([])
         print(" ************************** main")
-        return request.render('pet_care_website.home_page', {'dog_breed': dog_breed})
+        return request.render('pet_care_website.home_page', {'dog_breed': dog_breed, 'products': products, 'instagram': instagram, 'img_content': img_content})
 
     @http.route('/about', website=True, auth="public", type='http')
     def dog_about(self, **kw):
@@ -45,7 +50,9 @@ class MainAction(http.Controller):
     @http.route('/faq', website=True, auth="public", type='http')
     def dog_faq(self, **kw):
         print(" ************************** faq")
-        return request.render('pet_care_website.faq_page', {})
+        questions = request.env['faq.questions'].sudo().search([])
+
+        return request.render('pet_care_website.faq_page', {'questions': questions})
 
     @http.route('/reviews', website=True, auth="public", type='http')
     def dog_reviews(self, **kw):

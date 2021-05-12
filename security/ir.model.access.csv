@@ -3,3 +3,7 @@ access_pet_care,pet_care,model_pet_care,,1,1,1,1
 access_breed,breed,model_breed,,1,1,1,1
 access_dog_breed,dog_breed,model_dog_breed,,1,1,1,1
 access_cat_breed,cat_breed,model_cat_breed,,1,1,1,1
+access_faq_questions,faq_questions,model_faq_questions,,1,1,1,1
+access_question_tag,question_tag,model_question_tag,,1,1,1,1
+access_instagram_post,instagram_post,model_instagram_post,,1,1,1,1
+access_image_content,image_content,model_image_content,,1,1,1,1

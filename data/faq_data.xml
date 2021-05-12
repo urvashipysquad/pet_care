@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+<!--    quetion tags -->
+    <record id="faq_tag_1" model="question.tag">
+        <field name="name">Food</field>
+    </record>
+    <record id="faq_tag_2" model="question.tag">
+        <field name="name">Your Plan</field>
+    </record>
+    <record id="faq_tag_3" model="question.tag">
+        <field name="name">Packaging and Shipping</field>
+    </record>
+    <record id="faq_tag_4" model="question.tag">
+        <field name="name">Subscription</field>
+    </record>
+
+<!--    faq data-->
+
+<!--    food data-->
+    <record id="faq_food_tag_1" model="faq.questions">
+        <field name="question">Why should I feed fresh?</field>
+        <field name="answers">
+Short answer: with a whole lotta love. Longer answer: We started by working with a veterinary nutritionist who helped us formulate our balanced and complete, human-grade recipes. Then we carefully sourced our ingredients (more on this below!), cook them at low temperatures in small batches and hand-pack them.        </field>
+        <field name="tag_id" ref="pet_care_website.faq_tag_1"/>
+    </record>
+    <record id="faq_food_tag_2" model="faq.questions">
+        <field name="question">How are PawPots meals made?</field>
+        <field name="answers">We source our hormone-free chicken and high-quality beef from human-grade farms. Our vegetables, seeds and oils are carefully sourced and there’s absolutely no by-product, fillers, artificial flavoring or preservatives in our food. Ever. We make the food in a human-grade facility where we know the people who make it. Because we adhere to human standards, we go through the same safety hoops that companies do to make your food. And because we’re obsessed with the quality, we test every batch of PawPots to make sure it hasn’t been contaminated by anything before sending it out.</field>
+        <field name="tag_id" ref="pet_care_website.faq_tag_1"/>
+    </record>
+    <record id="faq_food_tag_3" model="faq.questions">
+        <field name="question">What are the quality of ingredients? How are recipes formulated?</field>
+        <field name="answers"></field>
+        <field name="tag_id" ref="pet_care_website.faq_tag_1"/>
+    </record>
+    <record id="faq_food_tag_4" model="faq.questions">
+        <field name="question">Do I need to refrigerate the food?</field>
+        <field name="answers"></field>
+        <field name="tag_id" ref="pet_care_website.faq_tag_1"/>
+    </record>
+    <record id="faq_food_tag_5" model="faq.questions">
+        <field name="question">Do I need to cook the food?</field>
+        <field name="answers"></field>
+        <field name="tag_id" ref="pet_care_website.faq_tag_1"/>
+    </record>
+    <record id="faq_food_tag_6" model="faq.questions">
+        <field name="question">How do you know what kind of food my dog needs?</field>
+        <field name="answers"></field>
+        <field name="tag_id" ref="pet_care_website.faq_tag_1"/>
+    </record>
+    <record id="faq_food_tag_7" model="faq.questions">
+        <field name="question">Do I need to consult my vet to use PawPots?</field>
+        <field name="answers"></field>
+        <field name="tag_id" ref="pet_care_website.faq_tag_1"/>
+    </record>
+    <record id="faq_food_tag_8" model="faq.questions">
+        <field name="question">Why can't I just cook dog food at home?</field>
+        <field name="answers"></field>
+        <field name="tag_id" ref="pet_care_website.faq_tag_1"/>
+    </record>
+
+<!--    your plan-->
+    <record id="faq_your_plan_tag_1" model="faq.questions">
+        <field name="question">How do I sign up for a plan?</field>
+        <field name="answers"></field>
+        <field name="tag_id" ref="pet_care_website.faq_tag_2"/>
+    </record>
+    <record id="faq_your_plan_tag_2" model="faq.questions">
+        <field name="question">How much does this cost?</field>
+        <field name="answers"></field>
+        <field name="tag_id" ref="pet_care_website.faq_tag_2"/>
+    </record>
+    <record id="faq_your_plan_tag_3" model="faq.questions">
+        <field name="question">How do you determine my dog's portions?</field>
+        <field name="answers"></field>
+        <field name="tag_id" ref="pet_care_website.faq_tag_2"/>
+    </record>
+    <record id="faq_your_plan_tag_4" model="faq.questions">
+        <field name="question">Who made your website?</field>
+        <field name="answers"></field>
+        <field name="tag_id" ref="pet_care_website.faq_tag_2"/>
+    </record>
+
+<!--    Packaging and Shipping-->
+
+    <record id="faq_Packaging_tag_1" model="faq.questions">
+        <field name="question">How do shipments work?</field>
+        <field name="answers"></field>
+        <field name="tag_id" ref="pet_care_website.faq_tag_3"/>
+    </record>
+    <record id="faq_Packaging_tag_2" model="faq.questions">
+        <field name="question">How do I know if the food is safe to feed when it arrives?</field>
+        <field name="answers"></field>
+        <field name="tag_id" ref="pet_care_website.faq_tag_3"/>
+    </record>
+    <record id="faq_Packaging_tag_3" model="faq.questions">
+        <field name="question">What if I am not home at the time my box arrives?</field>
+        <field name="answers"></field>
+        <field name="tag_id" ref="pet_care_website.faq_tag_3"/>
+    </record>
+    <record id="faq_Packaging_tag_4" model="faq.questions">
+        <field name="question">Do I need to refrigerate the food?</field>
+        <field name="answers"></field>
+        <field name="tag_id" ref="pet_care_website.faq_tag_3"/>
+    </record>
+    <record id="faq_Packaging_tag_5" model="faq.questions">
+        <field name="question">How can I find my tracking information?</field>
+        <field name="answers"></field>
+        <field name="tag_id" ref="pet_care_website.faq_tag_3"/>
+    </record>
+    <record id="faq_Packaging_tag_6" model="faq.questions">
+        <field name="question">How flexible are the deliveries?</field>
+        <field name="answers"></field>
+        <field name="tag_id" ref="pet_care_website.faq_tag_3"/>
+    </record>
+    <record id="faq_Packaging_tag_7" model="faq.questions">
+        <field name="question">How environmentally friendly are you deliveries?</field>
+        <field name="answers"></field>
+        <field name="tag_id" ref="pet_care_website.faq_tag_3"/>
+    </record>
+
+<!--    Subscription-->
+    <record id="faq_Subscription_tag_1" model="faq.questions">
+        <field name="question">I forgot my password- how can I reset it to log into my Customer Account?</field>
+        <field name="answers"></field>
+        <field name="tag_id" ref="pet_care_website.faq_tag_4"/>
+    </record>
+    <record id="faq_Subscription_tag_2" model="faq.questions">
+        <field name="question">What if my dog doesn't like the food?</field>
+        <field name="answers"></field>
+        <field name="tag_id" ref="pet_care_website.faq_tag_4"/>
+    </record>
+    <record id="faq_Subscription_tag_3" model="faq.questions">
+        <field name="question">When will my orders arrive?</field>
+        <field name="answers"></field>
+        <field name="tag_id" ref="pet_care_website.faq_tag_4"/>
+    </record>
+    <record id="faq_Subscription_tag_4" model="faq.questions">
+        <field name="question">How will I be billed for my plan?</field>
+        <field name="answers"></field>
+        <field name="tag_id" ref="pet_care_website.faq_tag_4"/>
+    </record>
+    <record id="faq_Subscription_tag_5" model="faq.questions">
+        <field name="question">Can I cancel or reactivate my subscription anytime?</field>
+        <field name="answers"></field>
+        <field name="tag_id" ref="pet_care_website.faq_tag_4"/>
+    </record>
+    <record id="faq_Subscription_tag_6" model="faq.questions">
+        <field name="question">Can I change when my next order will arrive?</field>
+        <field name="answers"></field>
+        <field name="tag_id" ref="pet_care_website.faq_tag_4"/>
+    </record>
+    <record id="faq_Subscription_tag_7" model="faq.questions">
+        <field name="question">Can I send my shipment to another location which is not my home?</field>
+        <field name="answers"></field>
+        <field name="tag_id" ref="pet_care_website.faq_tag_4"/>
+    </record>
+</odoo>

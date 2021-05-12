@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+<!--    instagram posts -->
+
+    <record id="post_1" model="instagram.post">
+            <field name="name">michkolley</field>
+            <field name="description">I adopted Kolley when she had parasite, dull coats, and coarse nasty stool. Now she goobles her PawPots treats and have beautiful, silky fut and her litter box isn't a toxic hazard site!</field>
+            <field name="insta_images" type="base64" file="pet_care_website/static/img/review-2.png"/>
+    </record>
+    <record id="post_2" model="instagram.post">
+            <field name="name">skygram</field>
+            <field name="description">Since starting PawPots, his stomach has been doing well, and I didn't think his fur could get any softer!</field>
+            <field name="insta_images" type="base64" file="pet_care_website/static/img/review-3.png"/>
+    </record>
+    <record id="post_3" model="instagram.post">
+            <field name="name">michkolley</field>
+            <field name="description">I adopted Kolley when she had parasite, dull coats, and coarse nasty stool. Now she goobles her PawPots treats and have beautiful, silky fut and her litter box isn't a toxic hazard site!</field>
+            <field name="insta_images" type="base64" file="pet_care_website/static/img/review-4.png"/>
+    </record>
+    <record id="post_4" model="instagram.post">
+            <field name="name">skygram</field>
+            <field name="description">Since starting PawPots, his stomach has been doing well, and I didn't think his fur could get any softer!</field>
+            <field name="insta_images" type="base64" file="pet_care_website/static/img/review-3.png"/>
+    </record>
+
+<!--    homepage background image and content-->
+
+    <record id="home_page_background" model="image.content">
+            <field name="page_name">Home Page</field>
+            <field name="head_text">Healthy, fresh food for dogs &amp; cats.</field>
+            <field name="snippet_text1">Give back the love !</field>
+            <field name="snippet_text2">Personalized meal plans, delivered.</field>
+            <field name="button_text">Start Today!</field>
+            <field name="bg_image" type="base64" file="pet_care_website/static/img/1.png"/>
+    </record>
+
+</odoo>

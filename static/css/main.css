@@ -663,3 +663,10 @@ a.page-link.active{
     color:white;
     background:#F05848;
     }
+
+form.card.oe_product_cart{
+    border:1px solid #EFEFEF;
+}
+form.card.oe_product_cart:hover{
+    border:1px solid #F05848;
+}

@@ -57,8 +57,144 @@
         <field name="view_mode">tree,form</field>
     </record>
 
+
+
+    <record id="faq_questions_tree_view" model="ir.ui.view">
+        <field name="name">faq questions</field>
+        <field name="model">faq.questions</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="question"/>
+                <field name="tag_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="faq_questions_form_view" model="ir.ui.view">
+        <field name="name">faq questions</field>
+        <field name="model">faq.questions</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="question"/>
+                        <field name="answers"/>
+                        <field name="tag_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="faq_questions_view">
+        <field name="name">faq.questions</field>
+        <field name="res_model">faq.questions</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="question_tag_tree_view" model="ir.ui.view">
+        <field name="name">question tag</field>
+        <field name="model">question.tag</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="question_tag_form_view" model="ir.ui.view">
+        <field name="name">question tag</field>
+        <field name="model">question.tag</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="question_tag_view">
+        <field name="name">question.tag</field>
+        <field name="res_model">question.tag</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="instagram_post_tree_view" model="ir.ui.view">
+        <field name="name">instagram.post</field>
+        <field name="model">instagram.post</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="instagram_post_form_view" model="ir.ui.view">
+        <field name="name">instagram.post</field>
+        <field name="model">instagram.post</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                        <field name="insta_images" widget="image"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="instagram_post_view">
+        <field name="name">instagram.post</field>
+        <field name="res_model">instagram.post</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <record id="image_content_tree_view" model="ir.ui.view">
+        <field name="name">image.content</field>
+        <field name="model">image.content</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="page_name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="image_content_form_view" model="ir.ui.view">
+        <field name="name">image.content</field>
+        <field name="model">image.content</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="page_name"/>
+                        <field name="head_text"/>
+                        <field name="snippet_text1"/>
+                        <field name="snippet_text2"/>
+                        <field name="button_text"/>
+                        <field name="bg_image" widget="image"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="image_content_view">
+        <field name="name">image.content</field>
+        <field name="res_model">image.content</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
     <menuitem id="main_menu" name="Pet Care" sequence="5"/>
+
     <menuitem id="pet_care_menu" name="PET Info" action="pet_care_website.pet_care_view" parent="pet_care_website.main_menu"/>
     <menuitem id="dog_breed_menu" name="DogBreed" action="pet_care_website.dog_breed_view" parent="pet_care_website.main_menu"/>
     <menuitem id="cat_breed_menu" name="catBreed" action="pet_care_website.cat_breed_view" parent="pet_care_website.main_menu"/>
+    <menuitem id="faq_questions_menu" name="FAQ" parent="pet_care_website.main_menu"/>
+    <menuitem id="faq_questions_menubar" name="FAQ" action="pet_care_website.faq_questions_view" parent="pet_care_website.faq_questions_menu"/>
+    <menuitem id="question_tag_menu" name="FAQ TAG" action="pet_care_website.question_tag_view" parent="pet_care_website.faq_questions_menu"/>
+    <menuitem id="instagram_post_menu" name="instagram post" action="pet_care_website.instagram_post_view" parent="pet_care_website.faq_questions_menu"/>
+    <menuitem id="image_content_menu" name="image content" action="pet_care_website.image_content_view" parent="pet_care_website.faq_questions_menu"/>
 </odoo>

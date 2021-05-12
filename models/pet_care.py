@@ -47,3 +47,21 @@ class CatBreed(Breed):
     name = fields.Char("Cats Breed")
     description = fields.Text("Information")
 
+
+class Faq(models.Model):
+    _name = "faq.questions"
+    _description = "faq questions-answers"
+
+    question = fields.Char("Question", required=True)
+    answers = fields.Text("Answers")
+    tag_id = fields.Many2one('question.tag', 'Tag')
+
+
+class FaqTag(models.Model):
+    _name = "question.tag"
+    _description = "question tags"
+    _rec_name = 'name'
+
+    name = fields.Char('Tag Name')
+
+

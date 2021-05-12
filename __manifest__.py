@@ -10,6 +10,8 @@
     'data': [
         'data/data.xml',
         'data/dog_breed.xml',
+        'data/faq_data.xml',
+        'data/home_data.xml',
         'views/assets.xml',
         'views/login_template.xml',
         'views/main_template.xml',
