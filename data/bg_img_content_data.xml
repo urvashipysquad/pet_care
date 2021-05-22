@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+   <data>
+      <!--    homepage background image and content-->
+      <record id="home_page_background" model="image.content">
+         <field name="page_name">Home Page</field>
+         <field name="head_text">Healthy, fresh food for dogs &amp; cats.</field>
+         <field name="snippet_text1">Give back the love !</field>
+         <field name="snippet_text2">Personalized meal plans, delivered.</field>
+         <field name="button_text">Start Today!</field>
+         <field name="bg_image" type="base64" file="pet_care_website/static/img/1.png"/>
+      </record>
+      <!--    aboutpage background image and content-->
+      <record id="about_page_background" model="image.content">
+         <field name="page_name">About Page</field>
+         <field name="head_text">Give Back The Love!</field>
+         <field name="snippet_text1"></field>
+         <field name="snippet_text2"></field>
+         <field name="button_text"></field>
+         <field name="bg_image" type="base64" file="pet_care_website/static/img/about-img-1.png"/>
+      </record>
+      <!--    reviewpage background image and content-->
+      <record id="review_page_background" model="image.content">
+         <field name="page_name">Review Page</field>
+         <field name="head_text">Sign Up to our Newsletter</field>
+         <field name="snippet_text1"></field>
+         <field name="snippet_text2"></field>
+         <field name="button_text"></field>
+         <field name="bg_image" type="base64" file="pet_care_website/static/img/1.png"/>
+      </record>
+      <!--    whyfreshpage background image and content-->
+      <record id="why_fresh_page_background" model="image.content">
+         <field name="page_name">Why Fresh Page</field>
+         <field name="head_text">It's time to move on !</field>
+         <field name="snippet_text1">After so many decades of being told to feed commercial "dog food".</field>
+         <field name="snippet_text2">isn't it time to take a minute and look at the results?</field>
+         <field name="button_text"></field>
+         <field name="bg_image" type="base64" file="pet_care_website/static/img/why-fresh-1.png"/>
+      </record>
+      <!--    Guarantee background image and content-->
+      <record id="Guarantee_page_background" model="image.content">
+      <field name="page_name">Guarantee Page</field>
+      <field name="head_text">Money-Back Guarantee!</field>
+      <field name="snippet_text1">Trust us, your pupp will thank you!
+         Our customers have reported not even
+         recognizing their pet after just few days!
+      </field>
+      <field name="snippet_text2"> </field>
+      <field name="button_text">Get Your Starter Box</field>
+      <field name="bg_image" type="base64" file="pet_care_website/static/img/7.png"/>
+   </record>
+   </data>
+</odoo>

@@ -1,38 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-
-        <record id="menu_nav_about" model="website.menu">
-            <field name="name">About</field>
-            <field name="url">/about</field>
-            <field name="parent_id" ref="website.main_menu"/>
-            <field name="sequence" type="int">11</field>
-        </record>
-        <delete model="website.menu" id="website_sale.menu_shop"/>
-        <record id="menu_shop_food" model="website.menu">
-            <field name="name">Food</field>
-            <field name="url">/shop</field>
-            <field name="parent_id" ref="website.main_menu"/>
-            <field name="sequence" type="int">12</field>
-        </record>
-        <record id="menu_review" model="website.menu">
-            <field name="name">Reviews</field>
-            <field name="url">/reviews</field>
-            <field name="parent_id" ref="website.main_menu"/>
-            <field name="sequence" type="int">13</field>
-        </record>
-        <record id="menu_why_fresh_custom" model="website.menu">
-            <field name="name">Why Fresh</field>
-            <field name="url">/why_fresh</field>
-            <field name="parent_id" ref="website.main_menu"/>
-            <field name="sequence" type="int">14</field>
-        </record>
-        <record id="menu_faq_custom" model="website.menu">
-            <field name="name">FAQ</field>
-            <field name="url">/faq</field>
-            <field name="parent_id" ref="website.main_menu"/>
-            <field name="sequence" type="int">15</field>
-        </record>
-        <delete model="website.menu" id="website.menu_contactus"/>
-    </data>
+   <data>
+      <record id="menu_nav_about" model="website.menu">
+         <field name="name">About</field>
+         <field name="url">/about</field>
+         <field name="parent_id" ref="website.main_menu"/>
+         <field name="sequence" type="int">11</field>
+      </record>
+      <delete model="website.menu" id="website_sale.menu_shop"/>
+      <record id="menu_shop_food" model="website.menu">
+         <field name="name">Food</field>
+         <field name="url">/shop</field>
+         <field name="parent_id" ref="website.main_menu"/>
+         <field name="sequence" type="int">12</field>
+      </record>
+      <record id="menu_review" model="website.menu">
+         <field name="name">Reviews</field>
+         <field name="url">/reviews</field>
+         <field name="parent_id" ref="website.main_menu"/>
+         <field name="sequence" type="int">13</field>
+      </record>
+      <record id="menu_why_fresh_custom" model="website.menu">
+         <field name="name">Why Fresh</field>
+         <field name="url">/why_fresh</field>
+         <field name="parent_id" ref="website.main_menu"/>
+         <field name="sequence" type="int">14</field>
+      </record>
+      <record id="menu_faq_custom" model="website.menu">
+         <field name="name">FAQ</field>
+         <field name="url">/faq</field>
+         <field name="parent_id" ref="website.main_menu"/>
+         <field name="sequence" type="int">15</field>
+      </record>
+      <record id="articles_custom" model="website.menu">
+         <field name="name">Articles</field>
+         <field name="url">/articles_page</field>
+         <field name="parent_id" ref="website.main_menu"/>
+         <field name="sequence" type="int">17</field>
+      </record>
+      <delete model="website.menu" id="website.menu_contactus"/>
+   </data>
 </odoo>

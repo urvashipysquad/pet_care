@@ -7,3 +7,9 @@ access_faq_questions,faq_questions,model_faq_questions,,1,1,1,1
 access_question_tag,question_tag,model_question_tag,,1,1,1,1
 access_instagram_post,instagram_post,model_instagram_post,,1,1,1,1
 access_image_content,image_content,model_image_content,,1,1,1,1
+access_pet_story,pet_story,model_pet_story,,1,1,1,1
+access_pet_quotes,pet_quotes,model_pet_quotes,,1,1,1,1
+access_transform_story,transform_story,model_transform_story,,1,1,1,1
+access_review_comment,review_comment,model_review_comment,,1,1,1,1
+access_review_users,review_users,model_review_users,,1,1,1,1
+access_articles_post,articles_post,model_articles_post,,1,1,1,1

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+   <template id="blog_page" inherit_id="website_blog.blog_post_short" customize_show="True" name="Blog">
+      <xpath expr="//div[@id='o_wblog_blog_top']" position="replace" />
+      <xpath expr="//section[@id='o_wblog_index_content']" position="replace">
+         <section id="o_wblog_index_content" t-att-class="opt_blog_cards_design and 'o_wblog_page_cards_bg'">
+            <div class="container py-4">
+               <div class="row">
+                  <div id="o_wblog_posts_loop_container" class="col-lg-12">
+                     <t t-call="website_blog.posts_loop">
+                        <t t-if="not blog" t-set="posts_list_show_parent_blog" t-value="True" />
+                     </t>
+                     <t t-call="website.pager">
+                        <t t-set="classname" t-valuef="justify-content-center" />
+                        <t t-set="extraLinkClass" t-valuef="post_link" />
+                     </t>
+                  </div>
+               </div>
+            </div>
+         </section>
+      </xpath>
+   </template>
+   <template id="website_blog.post_author">
+      <div t-attf-class="o_not_editable align-items-center position-relative #{additionnal_classes or ''}">
+         <div t-if="blog_post.author_avatar" t-field="blog_post.author_avatar" style="line-height:1" t-options="{&quot;widget&quot;: &quot;image&quot;, &quot;class&quot;: &quot;rounded-circle &quot; + &quot;o_wblog_author_avatar mr-1&quot; if hide_date else  &quot;o_wblog_author_avatar_date mr-2&quot;}" />
+         <div t-att-class="not hide_date and 'small font-weight-bold'" style="line-height:1">
+            <span t-if="editable" t-field="blog_post.author_id" t-options="{ &quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;name&quot;]}" />
+            <span style="color:#18433A;font-weight:bolder" t-else="" t-esc="blog_post.author_name" />
+            <small t-if="not hide_date" t-field="blog_post.post_date" t-options="{&quot;format&quot;: &quot;d MMMM, yyyy&quot;}" />
+         </div>
+      </div>
+   </template>
+</odoo>

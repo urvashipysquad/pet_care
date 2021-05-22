@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+   <template id="articles_page" name="articles">
+      <t t-call="website.layout">
+         <section class="s_cover parallax s_parallax_is_fixed bg-black-50 pt96 o_colored_level pb80" data-scroll-background-ratio="1" data-snippet="s_cover" data-name="Cover">
+            <span class="s_parallax_bg oe_img_bg" style="background:#F5F4F6" />
+            <h2 class="o_default_snippet_text text-center p-50">Articles</h2>
+            <!--            <div class="o_we_bg_filter bg-black-50"/>-->
+            <div class="container s_allow_columns">
+               <div class="row d-flex align-items-stretch" >
+                  <t t-foreach="articles" t-as="article">
+                     <div class="col-lg-3 s_col_no_bgcolor pt16 pb16">
+                        <div class="card bg-white h-100">
+                           <img class="card-img-top" t-attf-src="/web/image/articles.post/#{article['id']}/article_images" alt="Image"/>
+                           <div class="card-body insta-card-body">
+                              <b class="o_default_snippet_text color-org">
+                                 <t t-esc="article['title']"/>
+                              </b>
+                              <p class="o_default_snippet_text color-grn">
+                                 <t t-esc="article['description']"/>
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                  </t>
+               </div>
+            </div>
+         </section>
+      </t>
+      <t t-foreach="img_content" t-as="imgs">
+         <section class="s_cover parallax s_parallax_is_fixed bg-black-50 pt96 o_colored_level pb80" t-if="imgs.page_name=='Guarantee Page'">
+            <img t-attf-src="/web/image/image.content/#{imgs['id']}/bg_image" alt="Image" class="s_parallax_bg oe_img_bg"/>
+            <div class="o_we_bg_filter bg-black-20" />
+            <div class="container s_allow_columns">
+               <div class="row">
+                  <div class="col-md-6">
+                     <h1 style="text-align: center;">
+                        <font style="font-size: 42px; font-weight: bold;" class="o_default_snippet_brown_text">
+                           <t t-esc="imgs['head_text']"/>
+                        </font>
+                     </h1>
+                     <p class="lead o_default_snippet_brown_text text-center text-white">
+                        <t t-esc="imgs['snippet_text1']"/>
+                        <br class="hidden lg:display-none"/>
+                        <t t-esc="imgs['snippet_text2']"/>
+                        <br class="hidden lg:display-none"/>
+                     </p>
+                     <p t-if="imgs.button_text" class="text-center m-0 p-0">
+                        <a href="/contactus" class="button1 main_button mb-2 o_default_snippet_brown_text">
+                           <t t-esc="imgs.button_text"/>
+                        </a>
+                     </p>
+                  </div>
+                  <div class="col-md-6"></div>
+               </div>
+            </div>
+         </section>
+      </t>
+      <t t-if="user_id._is_public()">
+         <section class="about-part-8">
+            <div class="container s_allow_columns">
+               <br/><br/>
+               <h2 class="o_default_snippet_text" style="text-align: center;">Sign Up to our Newsletter</h2>
+               <p class="o_default_snippet_text color-grn" style="text-align: center;">
+                  Receive exclusive access to special offers, <br class="hidden lg:display-inline"/>
+                  promotions, product updates, news and more!
+               </p>
+               <form class="oe_subscribe_form sm:m-auto" role="form" t-attf-action="/web/login" method="post" onsubmit="this.action = '/web/login' + location.hash">
+                  <div class="form-group field-login">
+                     <input type="login" placeholder="Email" name="login" t-att-value="login" id="login_sub" t-attf-class="form-control #{'form-control-sm' if form_small else ''}" required="required" autocapitalize="off" />
+                  </div>
+                  <div t-attf-class="clearfix oe_login_buttons text-center mb-1 {{'pt-0' if form_small else 'pt-2'}}">
+                     <a href="/contactus" class="button1 main_button mb-2 o_default_snippet_text">Sign Up</a>
+                  </div>
+               </form>
+               <!--               <p style="text-align: center;">-->
+               <!--                  <center>-->
+               <!--                     <input type="login" placeholder="Email" name="login" t-att-value="login" id="login" t-attf-class="form-control #{'form-control-sm' if form_small else ''}" required="required" autofocus="autofocus" autocapitalize="off" />-->
+               <!--                  </center>-->
+               <!--               </p>-->
+            </div>
+         </section>
+      </t>
+   </template>
+</odoo>

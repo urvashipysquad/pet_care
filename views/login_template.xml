@@ -1,8 +1,17 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-<!--   login template-->
-       <template inherit_id="web.login" id="login_work" name="Login">
+   <!--   login template-->
+   <template inherit_id="web.login" id="login_work" name="Login">
       <xpath expr="//form" position="replace">
+         <!--         <div class="input-group" style="display:none">-->
+         <!--                     <input type="text" name="db" id="db" required="required" readonly="readonly" data-oe-model="ir.ui.view" data-oe-id="1438" data-oe-field="arch" data-oe-xpath="/data/xpath/div/form[1]/div[1]/div[1]/input[1]" value="pet_care3" class="form-control "/>-->
+         <!--                     <span class="input-group-append" data-oe-model="ir.ui.view" data-oe-id="1438" data-oe-field="arch" data-oe-xpath="/data/xpath/div/form[1]/div[1]/div[1]/span[1]">-->
+         <!--                        <a role="button" href="/web/database/selector" class="btn btn-secondary">-->
+         <!--                           Select-->
+         <!--                           <i class="fa fa-database" role="img" aria-label="Database" title="Database"></i>-->
+         <!--                        </a>-->
+         <!--                     </span>-->
+         <!--                  </div>-->
          <div class="login_container">
             <form class="oe_login_form sm:m-auto" role="form" t-attf-action="/web/login" method="post" onsubmit="this.action = '/web/login' + location.hash">
                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
@@ -38,8 +47,7 @@
                   <t t-if="debug">
                      <a t-attf-href="/web/become" name="redirect" class="text-center">Log in as superuser</a>
                   </t>
-                              <a t-attf-href="/web/signup{{ keep_query() }}" class="text-center" style="color:white;font-size:10px">create account?</a>
-
+                  <a t-attf-href="/web/signup{{ keep_query() }}" class="text-center" style="color:white;font-size:10px">create account?</a>
                   <div class="o_login_auth" />
                </div>
                <input type="hidden" name="redirect" t-att-value="redirect" />
@@ -47,9 +55,7 @@
          </div>
       </xpath>
    </template>
-
-<!--   signup template-->
-
+   <!--   signup template-->
    <template id="signup_work" inherit_id="auth_signup.fields" name="Password policy data for auth_signup">
       <xpath expr="//label[@for='login']" position="replace">
          <div class="text-center p-1">

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+   <data>
+         <record id="post_1" model="articles.post">
+      <field name="title">Understanding Fresh Pet Food</field>
+      <field name="description">Of the many pet food options
+         available, it's difficult to know what
+         option is the healthiest for your pet.
+         Learn about what fresh pet food is
+         and how fresh food can improve your
+         pet's health and happiness.
+      </field>
+      <field name="article_images" type="base64" file="pet_care_website/static/img/article-1.png" />
+   </record>
+         <record id="post_2" model="articles.post">
+            <field name="title">Cat Nutrition &amp; Training</field>
+            <field name="description">Cats have specific nutritional
+               requirements and their eating habits
+               vary not only from dogs but also
+               from cat to cat. Learn more about
+               cats and all their nutrition and
+               training specifics.
+            </field>
+            <field name="article_images" type="base64" file="pet_care_website/static/img/article-2.png" />
+         </record>
+         <record id="post_3" model="articles.post">
+            <field name="title">Overweight Pet</field>
+            <field name="description">60% of pets are overweight. Improper
+               nutrition, overfeeding and lack of
+               exercise are some common pet parent
+               practices that lead to an overweight
+               pet. Learn how to help manage your
+               pet's weight.
+            </field>
+            <field name="article_images" type="base64" file="pet_care_website/static/img/article-3.png" />
+         </record>
+         <record id="post_4" model="articles.post">
+            <field name="title">Pet Health Conditions</field>
+            <field name="description">Is your pet suffering from a health
+               condition? Learn how a fresh diet can
+               make a difference in helping their
+               condition and improving their overall
+               health.
+            </field>
+            <field name="article_images" type="base64" file="pet_care_website/static/img/article-4.png" />
+         </record>
+         <record id="post_5" model="articles.post">
+            <field name="title">Understanding Fresh Pet Food</field>
+            <field name="description">Of the many pet food options
+               available, it's difficult to know what
+               option is the healthiest for your pet.
+               Learn about what fresh pet food is
+               and how fresh food can improve your
+               pet's health and happiness.
+            </field>
+            <field name="article_images" type="base64" file="pet_care_website/static/img/article-1.png" />
+         </record>
+         <record id="post_6" model="articles.post">
+            <field name="title">Cat Nutrition &amp; Training</field>
+            <field name="description">Cats have specific nutritional
+               requirements and their eating habits
+               vary not only from dogs but also
+               from cat to cat. Learn more about
+               cats and all their nutrition and
+               training specifics.
+            </field>
+            <field name="article_images" type="base64" file="pet_care_website/static/img/article-2.png" />
+         </record>
+         <record id="post_7" model="articles.post">
+            <field name="title">Overweight Pet</field>
+            <field name="description">60% of pets are overweight. Improper
+               nutrition, overfeeding and lack of
+               exercise are some common pet parent
+               practices that lead to an overweight
+               pet. Learn how to help manage your
+               pet's weight.
+            </field>
+            <field name="article_images" type="base64" file="pet_care_website/static/img/article-3.png" />
+         </record>
+         <record id="post_8" model="articles.post">
+            <field name="title">Pet Health Conditions</field>
+            <field name="description">Is your pet suffering from a health
+               condition? Learn how a fresh diet can
+               make a difference in helping their
+               condition and improving their overall
+               health.
+            </field>
+            <field name="article_images" type="base64" file="pet_care_website/static/img/article-4.png" />
+         </record>
+         <record id="post_9" model="articles.post">
+            <field name="title">Understanding Fresh Pet Food</field>
+            <field name="description">Of the many pet food options
+               available, it's difficult to know what
+               option is the healthiest for your pet.
+               Learn about what fresh pet food is
+               and how fresh food can improve your
+               pet's health and happiness.
+            </field>
+            <field name="article_images" type="base64" file="pet_care_website/static/img/article-1.png" />
+         </record>
+         <record id="post_10" model="articles.post">
+            <field name="title">Cat Nutrition &amp; Training</field>
+            <field name="description">Cats have specific nutritional
+               requirements and their eating habits
+               vary not only from dogs but also
+               from cat to cat. Learn more about
+               cats and all their nutrition and
+               training specifics.
+            </field>
+            <field name="article_images" type="base64" file="pet_care_website/static/img/article-2.png" />
+         </record>
+         <record id="post_11" model="articles.post">
+            <field name="title">Overweight Pet</field>
+            <field name="description">60% of pets are overweight. Improper
+               nutrition, overfeeding and lack of
+               exercise are some common pet parent
+               practices that lead to an overweight
+               pet. Learn how to help manage your
+               pet's weight.
+            </field>
+            <field name="article_images" type="base64" file="pet_care_website/static/img/article-3.png" />
+         </record>
+         <record id="post_12" model="articles.post">
+            <field name="title">Pet Health Conditions</field>
+            <field name="description">Is your pet suffering from a health
+               condition? Learn how a fresh diet can
+               make a difference in helping their
+               condition and improving their overall
+               health.
+            </field>
+            <field name="article_images" type="base64" file="pet_care_website/static/img/article-4.png" />
+         </record>
+         <record id="post_13" model="articles.post">
+            <field name="title">Understanding Fresh Pet Food</field>
+            <field name="description">Of the many pet food options
+               available, it's difficult to know what
+               option is the healthiest for your pet.
+               Learn about what fresh pet food is
+               and how fresh food can improve your
+               pet's health and happiness.
+            </field>
+            <field name="article_images" type="base64" file="pet_care_website/static/img/article-1.png" />
+         </record>
+         <record id="post_14" model="articles.post">
+            <field name="title">Cat Nutrition &amp; Training</field>
+            <field name="description">Cats have specific nutritional
+               requirements and their eating habits
+               vary not only from dogs but also
+               from cat to cat. Learn more about
+               cats and all their nutrition and
+               training specifics.
+            </field>
+            <field name="article_images" type="base64" file="pet_care_website/static/img/article-2.png" />
+         </record>
+         <record id="post_15" model="articles.post">
+            <field name="title">Overweight Pet</field>
+            <field name="description">60% of pets are overweight. Improper
+               nutrition, overfeeding and lack of
+               exercise are some common pet parent
+               practices that lead to an overweight
+               pet. Learn how to help manage your
+               pet's weight.
+            </field>
+            <field name="article_images" type="base64" file="pet_care_website/static/img/article-3.png" />
+         </record>
+         <record id="post_16" model="articles.post">
+            <field name="title">Pet Health Conditions</field>
+            <field name="description">Is your pet suffering from a health
+               condition? Learn how a fresh diet can
+               make a difference in helping their
+               condition and improving their overall
+               health.
+            </field>
+            <field name="article_images" type="base64" file="pet_care_website/static/img/article-4.png" />
+         </record>
+   </data>
+</odoo>

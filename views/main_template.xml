@@ -1,149 +1,147 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <template id="header"  inherit_id="website.layout" name="Template Header Minimalist" active="False">
-    <xpath expr="//header//nav" position="replace">
-        <nav data-name="Navbar" class="navbar navbar-light navbar-expand-md o_colored_level o_cc ml-auto">
+   <template id="header"  inherit_id="website.layout" name="Template Header Minimalist" active="False">
+      <xpath expr="//header//nav" position="replace">
+         <nav data-name="Navbar" class="navbar navbar-light navbar-expand-md o_colored_level o_cc ml-auto">
             <div id="top_menu_container" class="container ml-auto">
-                <!-- Brand -->
-                <t t-call="website.placeholder_header_brand"/>
-                <!-- Navbar Toggler -->
-                <t t-call="website.navbar_toggler"/>
-                <!-- Language Selector -->
-                <t t-call="website.placeholder_header_language_selector">
-                    <t t-set="_div_classes" t-value="'ml-2'"/>
-                </t>
-                <!-- Navbar Collapse -->
-                <div id="top_menu_collapse" class="collapse navbar-collapse ml-auto">
-                    <t t-call="website.navbar_nav">
-                        <t t-set="_nav_class" t-value="'ml-auto'"/>
-                        <!-- Menu -->
-                        <t t-foreach="website.menu_id.child_id" t-as="submenu">
-                            <t t-call="website.submenu">
-                                <t t-set="item_class" t-value="'nav-item'"/>
-                                <t t-set="link_class" t-value="'nav-link'"/>
-                            </t>
+               <!-- Brand -->
+               <t t-call="website.placeholder_header_brand"/>
+               <!-- Navbar Toggler -->
+               <t t-call="website.navbar_toggler"/>
+               <!-- Language Selector -->
+               <t t-call="website.placeholder_header_language_selector">
+                  <t t-set="_div_classes" t-value="'ml-2'"/>
+               </t>
+               <!-- Navbar Collapse -->
+               <div id="top_menu_collapse" class="collapse navbar-collapse ml-auto">
+                  <t t-call="website.navbar_nav">
+                     <t t-set="_nav_class" t-value="'ml-auto font-weight-bold'"/>
+                     <!-- Menu -->
+                     <t t-foreach="website.menu_id.child_id" t-as="submenu">
+                        <t t-call="website.submenu">
+                           <t t-set="item_class" t-value="'nav-item'"/>
+                           <t t-set="link_class" t-value="'nav-link font-weight-bold'"/>
                         </t>
-                        <!-- Sign In -->
-                        <t t-call="portal.placeholder_user_sign_in">
-                            <t t-set="_item_class" t-value="'nav-item ml-auto'"/>
-                            <t t-set="_link_class" t-value="'nav-link font-weight-bold'"/>
-                        </t>
-                        <!-- User Dropdown -->
-                        <t t-call="portal.user_dropdown">
-                            <t t-set="_avatar" t-value="True"/>
-                            <t t-set="_item_class" t-value="'nav-item dropdown ml-auto'"/>
-                            <t t-set="_link_class" t-value="'nav-link'"/>
-                        </t>
-                    </t>
-                </div>
-            </div>
-        </nav>
-    </xpath>
-</template>
-    <template id="footer" inherit_id="website.layout" name="Default" active="True">
-    <xpath expr="//div[@id='footer']" position="replace">
-        <div id="footer" class="oe_structure oe_structure_solo" t-ignore="true" t-if="not no_footer">
-            <section class="s_text_block pt40 pb16" data-snippet="s_text_block" data-name="Text">
-                     <footer class="text-center" style="background-color:#fff">
-               <!-- Grid container -->
-               <div class="container-fluid p-4">
-                  <!-- Section: Social media -->
-                  <section class="">
-                     <!--Grid row-->
-                     <div class="row">
-                        <!--Grid column-->
-                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                           <p>Company</p>
-                           <ul class="list-unstyled mb-0">
-                              <li>
-                                 <a href="#!"><small>About</small></a>
-                              </li>
-                              <li>
-                                 <a href="#!" ><small>Careers</small></a>
-                              </li>
-                              <li>
-                                 <a href="#!" ><small>Affliate Program</small></a>
-                              </li>
-                              <li>
-                                 <a href="#!" ><small>Adoption Program</small></a>
-                              </li>
-                           </ul>
-                        </div>
-                        <!--Grid column-->
-                        <!--Grid column-->
-                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                           <p class="">Learn</p>
-                           <ul class="list-unstyled mb-0">
-                              <li>
-                                 <a href="#!" ><small>Why Fresh?</small></a>
-                              </li>
-                              <li>
-                                 <a href="#!" ><small>FAQ</small></a>
-                              </li>
-                              <li>
-                                 <a href="#!" ><small>Articles</small></a>
-                              </li>
-                              <li>
-                                 <a href="#!" ><small>Blog</small></a>
-                              </li>
-                              <li>
-                                 <a href="#!" ><small>Privacy Policy</small></a>
-                              </li>
-                              <li>
-                                 <a href="#!" ><small>Terms &amp;amp; Conditions</small></a>
-                              </li>
-                           </ul>
-                        </div>
-                        <!--Grid column-->
-                        <!--Grid column-->
-                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                           <p class="">Contact Us</p>
-                           <ul class="list-unstyled mb-0">
-                              <li>
-                                 <a href="#!" ><small>info@pawpoets.com</small></a>
-                              </li>
-                              <li>
-                                 <a href="#!" ><small>+91 777 777777</small></a>
-                              </li>
-                              <li>
-                                 <a href="#!" ><small>Monday-Friday 9am-5pm</small></a>
-                              </li>
-                           </ul>
-                        </div>
-                        <!--Grid column-->
-                        <!--Grid column-->
-                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                           <p class="">Follow Us</p>
-                           <ul class="list-unstyled mb-0">
-                              <li>
-                                 <a href="#!" ><small>Instagram</small></a>
-                              </li>
-                              <li>
-                                 <a href="#!" ><small>Facebook</small></a>
-                              </li>
-                              <li>
-                                 <a href="#!" ><small>LinkedIn</small></a>
-                              </li>
-                           </ul>
-                        </div>
-                        <!--Grid column-->
-                     </div>
-                     <!--Grid row-->
-                  </section>
-                  <!-- Section: Links -->
+                     </t>
+                     <!-- Sign In -->
+                     <t t-call="portal.placeholder_user_sign_in">
+                        <t t-set="_item_class" t-value="'nav-item ml-auto'"/>
+                        <t t-set="_link_class" t-value="'nav-link font-weight-bold'"/>
+                     </t>
+                     <!-- User Dropdown -->
+                     <t t-call="portal.user_dropdown">
+                        <t t-set="_avatar" t-value="True"/>
+                        <t t-set="_item_class" t-value="'nav-item dropdown ml-auto'"/>
+                        <t t-set="_link_class" t-value="'nav-link'"/>
+                     </t>
+                  </t>
                </div>
-               <!-- Grid container -->
-               <!-- Copyright -->
-<!--               <div class="text-left p-3" style="background-color: rgba(0, 0, 0, 0.2);">-->
-<!--                  © 2020 Copyright:-->
-<!--                  <a class="text-dark" href="#"></a>-->
-<!--               </div>-->
-               <!-- Copyright -->
-            </footer>
-
+            </div>
+         </nav>
+      </xpath>
+   </template>
+   <template id="footer" inherit_id="website.layout" name="Default" active="True">
+      <xpath expr="//div[@id='footer']" position="replace">
+         <div id="footer" class="oe_structure oe_structure_solo" t-ignore="true" t-if="not no_footer">
+            <section class="s_text_block pt40 pb16" data-snippet="s_text_block" data-name="Text">
+               <footer class="text-center" style="background-color:#fff">
+                  <!-- Grid container -->
+                  <div class="container-fluid p-4">
+                     <!-- Section: Social media -->
+                     <section class="">
+                        <!--Grid row-->
+                        <div class="row">
+                           <!--Grid column-->
+                           <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                              <p>Company</p>
+                              <ul class="list-unstyled mb-0">
+                                 <li>
+                                    <a href="#!"><small>About</small></a>
+                                 </li>
+                                 <li>
+                                    <a href="#!" ><small>Careers</small></a>
+                                 </li>
+                                 <li>
+                                    <a href="#!" ><small>Affliate Program</small></a>
+                                 </li>
+                                 <li>
+                                    <a href="#!" ><small>Adoption Program</small></a>
+                                 </li>
+                              </ul>
+                           </div>
+                           <!--Grid column-->
+                           <!--Grid column-->
+                           <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                              <p class="">Learn</p>
+                              <ul class="list-unstyled mb-0">
+                                 <li>
+                                    <a href="#!" ><small>Why Fresh?</small></a>
+                                 </li>
+                                 <li>
+                                    <a href="#!" ><small>FAQ</small></a>
+                                 </li>
+                                 <li>
+                                    <a href="#!" ><small>Articles</small></a>
+                                 </li>
+                                 <li>
+                                    <a href="#!" ><small>Blog</small></a>
+                                 </li>
+                                 <li>
+                                    <a href="#!" ><small>Privacy Policy</small></a>
+                                 </li>
+                                 <li>
+                                    <a href="#!" ><small>Terms &amp;amp; Conditions</small></a>
+                                 </li>
+                              </ul>
+                           </div>
+                           <!--Grid column-->
+                           <!--Grid column-->
+                           <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                              <p class="">Contact Us</p>
+                              <ul class="list-unstyled mb-0">
+                                 <li>
+                                    <a href="#!" ><small>info@pawpoets.com</small></a>
+                                 </li>
+                                 <li>
+                                    <a href="#!" ><small>+91 777 777777</small></a>
+                                 </li>
+                                 <li>
+                                    <a href="#!" ><small>Monday-Friday 9am-5pm</small></a>
+                                 </li>
+                              </ul>
+                           </div>
+                           <!--Grid column-->
+                           <!--Grid column-->
+                           <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                              <p class="">Follow Us</p>
+                              <ul class="list-unstyled mb-0">
+                                 <li>
+                                    <a href="#!" ><small>Instagram</small></a>
+                                 </li>
+                                 <li>
+                                    <a href="#!" ><small>Facebook</small></a>
+                                 </li>
+                                 <li>
+                                    <a href="#!" ><small>LinkedIn</small></a>
+                                 </li>
+                              </ul>
+                           </div>
+                           <!--Grid column-->
+                        </div>
+                        <!--Grid row-->
+                     </section>
+                     <!-- Section: Links -->
+                  </div>
+                  <!-- Grid container -->
+                  <!-- Copyright -->
+                  <!--               <div class="text-left p-3" style="background-color: rgba(0, 0, 0, 0.2);">-->
+                  <!--                  © 2020 Copyright:-->
+                  <!--                  <a class="text-dark" href="#"></a>-->
+                  <!--               </div>-->
+                  <!-- Copyright -->
+               </footer>
             </section>
-        </div>
-    </xpath>
-
-</template>
+         </div>
+      </xpath>
+   </template>
 </odoo>

@@ -1,37 +1,107 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-<!--    instagram posts -->
-
-    <record id="post_1" model="instagram.post">
-            <field name="name">michkolley</field>
-            <field name="description">I adopted Kolley when she had parasite, dull coats, and coarse nasty stool. Now she goobles her PawPots treats and have beautiful, silky fut and her litter box isn't a toxic hazard site!</field>
-            <field name="insta_images" type="base64" file="pet_care_website/static/img/review-2.png"/>
-    </record>
-    <record id="post_2" model="instagram.post">
-            <field name="name">skygram</field>
-            <field name="description">Since starting PawPots, his stomach has been doing well, and I didn't think his fur could get any softer!</field>
-            <field name="insta_images" type="base64" file="pet_care_website/static/img/review-3.png"/>
-    </record>
-    <record id="post_3" model="instagram.post">
-            <field name="name">michkolley</field>
-            <field name="description">I adopted Kolley when she had parasite, dull coats, and coarse nasty stool. Now she goobles her PawPots treats and have beautiful, silky fut and her litter box isn't a toxic hazard site!</field>
-            <field name="insta_images" type="base64" file="pet_care_website/static/img/review-4.png"/>
-    </record>
-    <record id="post_4" model="instagram.post">
-            <field name="name">skygram</field>
-            <field name="description">Since starting PawPots, his stomach has been doing well, and I didn't think his fur could get any softer!</field>
-            <field name="insta_images" type="base64" file="pet_care_website/static/img/review-3.png"/>
-    </record>
-
-<!--    homepage background image and content-->
-
-    <record id="home_page_background" model="image.content">
-            <field name="page_name">Home Page</field>
-            <field name="head_text">Healthy, fresh food for dogs &amp; cats.</field>
-            <field name="snippet_text1">Give back the love !</field>
-            <field name="snippet_text2">Personalized meal plans, delivered.</field>
-            <field name="button_text">Start Today!</field>
-            <field name="bg_image" type="base64" file="pet_care_website/static/img/1.png"/>
-    </record>
-
+   <data>
+      <!--    instagram posts -->
+      <record id="post_1" model="instagram.post">
+         <field name="name">michkolley</field>
+         <field name="description">I adopted Kolley when she had parasite, dull coats, and coarse nasty stool. Now she goobles her PawPots treats and have beautiful, silky fut and her litter box isn't a toxic hazard site!</field>
+         <field name="insta_images" type="base64" file="pet_care_website/static/img/review-2.png"/>
+      </record>
+      <record id="post_2" model="instagram.post">
+         <field name="name">skygram</field>
+         <field name="description">Since starting PawPots, his stomach has been doing well, and I didn't think his fur could get any softer!</field>
+         <field name="insta_images" type="base64" file="pet_care_website/static/img/review-3.png"/>
+      </record>
+      <record id="post_3" model="instagram.post">
+         <field name="name">michkolley</field>
+         <field name="description">I adopted Kolley when she had parasite, dull coats, and coarse nasty stool. Now she goobles her PawPots treats and have beautiful, silky fut and her litter box isn't a toxic hazard site!</field>
+         <field name="insta_images" type="base64" file="pet_care_website/static/img/review-4.png"/>
+      </record>
+      <record id="post_4" model="instagram.post">
+         <field name="name">skygram</field>
+         <field name="description">Since starting PawPots, his stomach has been doing well, and I didn't think his fur could get any softer!</field>
+         <field name="insta_images" type="base64" file="pet_care_website/static/img/review-3.png"/>
+      </record>
+      <!--review person-->
+      <record id="review_person_1" model="review.comment">
+         <field name="name">John Smith</field>
+         <field name="comment">I FEEL LIKE THIS FOOS HAS EXTENDED THE LIFE OF MY PETS </field>
+      </record>
+      <!--    review.users -->
+      <record id="review_users_1" model="review.users">
+         <field name="name">Pamela Stewart</field>
+         <field name="image" type="base64" file="pet_care_website/static/img/review-2.png"/>
+         <field name="stars">5</field>
+         <field name="comment">"My dog LOVES the food and I
+            love the convenience and
+            nutritional value!"
+         </field>
+      </record>
+      <record id="review_users_2" model="review.users">
+         <field name="name">Catherine Clark</field>
+         <field name="image" type="base64" file="pet_care_website/static/img/review-4.jpg"/>
+         <field name="stars">5</field>
+         <field name="comment">"We have noticed clearer
+            eyes, shinier coat, and
+            much more energy!"
+         </field>
+      </record>
+      <record id="review_users_3" model="review.users">
+         <field name="name">Shawna Heninger</field>
+         <field name="image" type="base64" file="pet_care_website/static/img/review-4.png"/>
+         <field name="stars">5</field>
+         <field name="comment">"If you love your dog feed
+            him food from PawPots.
+            Your dog will love it and
+            you will love knowing it is
+            healthy and safe."
+         </field>
+      </record>
+      <record id="review_users_4" model="review.users">
+         <field name="name">Pamela Stewart</field>
+         <field name="image" type="base64" file="pet_care_website/static/img/review-2.png"/>
+         <field name="stars">5</field>
+         <field name="comment">"My dog LOVES the food and I
+            love the convenience and
+            nutritional value!"
+         </field>
+      </record>
+      <record id="review_users_5" model="review.users">
+         <field name="name">Catherine Clark</field>
+         <field name="image" type="base64" file="pet_care_website/static/img/review-4.jpg"/>
+         <field name="stars">5</field>
+         <field name="comment">"We have noticed clearer
+            eyes, shinier coat, and
+            much more energy!"
+         </field>
+      </record>
+      <record id="review_users_6" model="review.users">
+         <field name="name">Shawna Heninger</field>
+         <field name="image" type="base64" file="pet_care_website/static/img/review-4.png"/>
+         <field name="stars">5</field>
+         <field name="comment">"If you love your dog feed
+            him food from PawPots.
+            Your dog will love it and
+            you will love knowing it is
+            healthy and safe."
+         </field>
+      </record>
+      <!--    transformation story-->
+      <record id="transform_story" model="transform.story">
+         <field name="name">Transformation Stories</field>
+         <field name="title1">Chloe's Story</field>
+         <field name="title2">A Fresh Start For A Senior Dog</field>
+         <field name="description1">When Julia's vet recommended putting Chloe to sleep due to her
+            illness and advanced age, Julia was devastated - and
+            determined to find a solution to keep Chloe happy and healthy
+            as long as possible.
+         </field>
+         <field name="description2">Then, a breakthrough: she discovered PawPots. She took the
+            nutritional information to her vet, who was on board right away.
+            "She said that's it. That's the food you need to have her on."
+         </field>
+         <field name="image" type="base64" file="pet_care_website/static/img/tra-dog-img-1.png"/>
+         <field name="btn_text">More Transformation Stories</field>
+      </record>
+   </data>
 </odoo>

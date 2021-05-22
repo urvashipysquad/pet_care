@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+   <data>
+      <record id="about_data_1" model="pet.story">
+         <field name="name">First Story</field>
+         <field name="title">The Furry Tail</field>
+         <field name="description">With lots of research, we concluded that real fresh food is the best option,
+            so we started cooking for Stark and very soon noticed the difference!
+            We invested more time researching and working with veterinary
+            nutritionists to select the best ingredients and balanced formula,
+            following standard, so that pets could benefit the most.
+         </field>
+         <field name="description2"></field>
+         <field name="image" type="base64" file="pet_care_website/static/img/about-img-2.png"/>
+      </record>
+      <record id="about_data_2" model="pet.story">
+         <field name="name">Second Story</field>
+         <field name="title">The Science Behind</field>
+         <field name="description">With lots of research, we concluded that real fresh food is the best option,
+            so we started cooking for Stark and very soon noticed the difference!
+            We invested more time researching and working with veterinary
+            nutritionists to select the best ingredients and balanced formula,
+            following standard, so that pets could benefit the most.
+         </field>
+         <field name="description2"></field>
+         <field name="image" type="base64" file="pet_care_website/static/img/about-img-3.png"/>
+      </record>
+      <record id="about_data_3" model="pet.story">
+         <field name="name">Third Story</field>
+         <field name="title">Our Fine Methods</field>
+         <field name="description">
+            We carefully source each and every ingredient that goes into our
+            meals; We use only restaurant-quality grade A proteins and
+            vegetables, coming from trusted and reliable suppliers.
+            We gently cook the ingredients to ensure that all vital nutrients are
+            sealed-in and the food is highly digestible. No high temperatures.
+            No extrusion. Just like you do it for your baby!
+            The recipe are mixed with precision in small batches, keeping our
+            meals perfectly complete and balanced.
+         </field>
+         <field name="description2"></field>
+         <field name="image" type="base64" file="pet_care_website/static/img/about-img-4.png"/>
+      </record>
+      <record id="about_data_4" model="pet.story">
+         <field name="name">Forth Story</field>
+         <field name="title">We're just getting started!</field>
+         <field name="description">For the last 3 years, we've worked day and night to perfect our
+            recipes and services in order to make sure we provide the best to
+            our furry friends.
+            We've already tailored more than 80,000 meals, helping many pets
+            live a healthier and happier life!
+            Seen from a pup perspective?
+            We are simply giving back the love!
+         </field>
+         <field name="description2"></field>
+         <field name="image" type="base64" file="pet_care_website/static/img/about-img-2.png"/>
+      </record>
+      <record id="about_data_5" model="pet.story">
+         <field name="name">Fifth Story</field>
+         <field name="title">What about "Premium" dry food?</field>
+         <field name="description">Regulations allow very low safety and quality standards when it comes to pet food production. So big brands are focusing more on attractive labeling and marketing tricks instead of nutrient value and health. The process of manufacturing dry food is almost the same regardless of the brand; mainly meat leftovers and diseased animals, mixed with starchy filters, and processed at temperatures known to produce carcinogens. </field>
+         <field name="description2">And this can all be labeled "Premium" , "Natural" and even "Organic"</field>
+         <field name="image" type="base64" file="pet_care_website/static/img/about-img-3.png"/>
+      </record>
+
+<!--      pet quotes-->
+
+      <record id="pet_quotes_1" model="pet.quotes">
+         <field name="name">First Quote</field>
+         <field name="quote">“A dog teaches a boy fidelity, perseverance, and to turn around three times before lying down.”</field>
+<!--         <field name="image" type="base64" file="pet_care_website/static/img/about-img-3.png"/>-->
+         <field name="admin_name">Josh Billings</field>
+         <field name="admin_company_position">humourist</field>
+      </record>
+      <record id="pet_quotes_2" model="pet.quotes">
+         <field name="name">Second Quote</field>
+         <field name="quote">“Don’t accept your dog’s admiration as conclusive evidence that you are wonderful.”</field>
+<!--         <field name="image" type="base64" file="pet_care_website/static/img/about-img-3.png"/>-->
+         <field name="admin_name">Ann Landers </field>
+         <field name="admin_company_position">advice columnist</field>
+      </record>
+      <record id="pet_quotes_3" model="pet.quotes">
+         <field name="name">Third Quote</field>
+         <field name="quote">“There is no faith which has never yet been broken, except that of a truly faithful dog.”</field>
+<!--         <field name="image" type="base64" file="pet_care_website/static/img/about-img-3.png"/>-->
+         <field name="admin_name">Konrad Lorenz</field>
+         <field name="admin_company_position">zoologist</field>
+      </record>
+   </data>
+</odoo>

@@ -27,71 +27,71 @@
                         </div>
                      </t>
                   </t>
-<!--                  <div class="card" data-name="Item">-->
-<!--                     <a href="#" role="tab" data-toggle="collapse" aria-expanded="true" class="card-header color-grn bg-white" data-parent="#myCollapse" data-target="#myCollapseTab1619412425564" data-original-title="" title="" aria-describedby="tooltip138887">Why should I feed fresh?</a>-->
-<!--                     <div class="collapse show" role="tabpanel" id="myCollapseTab1619412425564" style="">-->
-<!--                        <div class="card-body border-none">-->
-<!--                           <p class="card-text o_default_snippet_text">These terms of service ("Terms", "Agreement") are an agreement between the website ("Website operator", "us", "we" or "our") and you ("User", "you" or "your"). This Agreement sets forth the general terms and conditions of your use of this website and any of its products or services (collectively, "Website" or "Services").</p>-->
-<!--                        </div>-->
-<!--                     </div>-->
-<!--                  </div>-->
+                  <!--                  <div class="card" data-name="Item">-->
+                  <!--                     <a href="#" role="tab" data-toggle="collapse" aria-expanded="true" class="card-header color-grn bg-white" data-parent="#myCollapse" data-target="#myCollapseTab1619412425564" data-original-title="" title="" aria-describedby="tooltip138887">Why should I feed fresh?</a>-->
+                  <!--                     <div class="collapse show" role="tabpanel" id="myCollapseTab1619412425564" style="">-->
+                  <!--                        <div class="card-body border-none">-->
+                  <!--                           <p class="card-text o_default_snippet_text">These terms of service ("Terms", "Agreement") are an agreement between the website ("Website operator", "us", "we" or "our") and you ("User", "you" or "your"). This Agreement sets forth the general terms and conditions of your use of this website and any of its products or services (collectively, "Website" or "Services").</p>-->
+                  <!--                        </div>-->
+                  <!--                     </div>-->
+                  <!--                  </div>-->
                </div>
                <div class="s_faq_collapse pt32 pb32 o_colored_level" >
                   <h2 class="o_default_snippet_text color-org pb-2">Creating Your Plan</h2>
-               <div id="myCollapse" class="accordion" role="tablist">
-                  <t  t-foreach="questions" t-as="que">
-                     <t t-if="que.tag_id.name=='Your Plan'">
-                        <div class="card" data-name="Item">
-                           <a href="#" role="tab" data-toggle="collapse" aria-expanded="false" class="collapsed card-header color-grn bg-white o_default_snippet_text" data-target="#tab3" data-parent="#myCollapse"  t-esc="que.question"></a>
-                           <div class="collapse" role="tabpanel" id="tab3">
-                              <div class="card-body">
-                                 <p class="card-text o_default_snippet_text">
-                                    <t t-esc="que.answers"/>
-                                 </p>
+                  <div id="myCollapse" class="accordion" role="tablist">
+                     <t  t-foreach="questions" t-as="que">
+                        <t t-if="que.tag_id.name=='Your Plan'">
+                           <div class="card" data-name="Item">
+                              <a href="#" role="tab" data-toggle="collapse" aria-expanded="false" class="collapsed card-header color-grn bg-white o_default_snippet_text" data-target="#tab3" data-parent="#myCollapse"  t-esc="que.question"></a>
+                              <div class="collapse" role="tabpanel" id="tab3">
+                                 <div class="card-body">
+                                    <p class="card-text o_default_snippet_text">
+                                       <t t-esc="que.answers"/>
+                                    </p>
+                                 </div>
                               </div>
                            </div>
-                        </div>
+                        </t>
                      </t>
-                  </t>
-               </div>
+                  </div>
                </div>
                <div class="s_faq_collapse pt32 pb32 o_colored_level" >
                   <h2 class="o_default_snippet_text color-org pb-2">Packaging and Shipping</h2>
-               <div id="myCollapse" class="accordion" role="tablist">
-                  <t  t-foreach="questions" t-as="que">
-                     <t t-if="que.tag_id.name=='Packaging and Shipping'">
-                        <div class="card" data-name="Item">
-                           <a href="#" role="tab" data-toggle="collapse" aria-expanded="false" data-target="#tab4" class="collapsed card-header color-grn bg-white o_default_snippet_text" data-parent="#myCollapse"  t-esc="que.question"></a>
-                           <div class="collapse" role="tabpanel" id="tab4">
-                              <div class="card-body">
-                                 <p class="card-text o_default_snippet_text">
-                                    <t t-esc="que.answers"/>
-                                 </p>
+                  <div id="myCollapse" class="accordion" role="tablist">
+                     <t  t-foreach="questions" t-as="que">
+                        <t t-if="que.tag_id.name=='Packaging and Shipping'">
+                           <div class="card" data-name="Item">
+                              <a href="#" role="tab" data-toggle="collapse" aria-expanded="false" data-target="#tab4" class="collapsed card-header color-grn bg-white o_default_snippet_text" data-parent="#myCollapse"  t-esc="que.question"></a>
+                              <div class="collapse" role="tabpanel" id="tab4">
+                                 <div class="card-body">
+                                    <p class="card-text o_default_snippet_text">
+                                       <t t-esc="que.answers"/>
+                                    </p>
+                                 </div>
                               </div>
                            </div>
-                        </div>
+                        </t>
                      </t>
-                  </t>
-               </div>
+                  </div>
                </div>
                <div class="s_faq_collapse pt32 pb32 o_colored_level" >
                   <h2 class="o_default_snippet_text color-org pb-2">Your Subscription</h2>
-               <div id="myCollapse" class="accordion" role="tablist">
-                  <t  t-foreach="questions" t-as="que">
-                     <t t-if="que.tag_id.name=='Subscription'">
-                        <div class="card" data-name="Item">
-                           <a href="#" role="tab" data-toggle="collapse" aria-expanded="false" class="collapsed card-header color-grn bg-white o_default_snippet_text" data-target="#tab2" data-parent="#myCollapse"  t-esc="que.question"></a>
-                           <div class="collapse" role="tabpanel" id="tab2">
-                              <div class="card-body">
-                                 <p class="card-text o_default_snippet_text">
-                                    <t t-esc="que.answers"/>
-                                 </p>
+                  <div id="myCollapse" class="accordion" role="tablist">
+                     <t  t-foreach="questions" t-as="que">
+                        <t t-if="que.tag_id.name=='Subscription'">
+                           <div class="card" data-name="Item">
+                              <a href="#" role="tab" data-toggle="collapse" aria-expanded="false" class="collapsed card-header color-grn bg-white o_default_snippet_text" data-target="#tab2" data-parent="#myCollapse"  t-esc="que.question"></a>
+                              <div class="collapse" role="tabpanel" id="tab2">
+                                 <div class="card-body">
+                                    <p class="card-text o_default_snippet_text">
+                                       <t t-esc="que.answers"/>
+                                    </p>
+                                 </div>
                               </div>
                            </div>
-                        </div>
+                        </t>
                      </t>
-                  </t>
-               </div>
+                  </div>
                </div>
             </div>
          </section>

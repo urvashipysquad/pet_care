@@ -1,204 +1,250 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <template id="pet_webform" name="pet web form">
-            <t t-call="website.layout">
-                <div id="wrap">
-                    <div class="oe_structure">
-                        <div class="container">
-                                 <div class="row d-flex justify-content-center mt-200">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-            Launch multistep Wizard </button>
-    </div>
-                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Pet Care</h5> <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&amp;times;</span> </button>
-                </div>
-                <div class="modal-body">
-
-                   <form role="form" method="post" action="/create/pet">
-                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
-
-                    <div id="smartwizard">
-                        <ul>
-                            <li><a href="#step-1">1</a></li>
-                            <li><a href="#step-2">2</a></li>
-                            <li><a href="#step-3">3</a></li>
-                            <li><a href="#step-4">4</a></li>
-                        </ul>
-                        <div class="mt-4">
-                            <div id="step-1">
-                                <div class="row">
-                                    <div class="col-md-6"> <div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="radio" name="gender" id="gender" value="dog_male"/>
-                                  <label class="form-check-label" for="gender">DogMale</label>
-                                </div></div>
-                                    <div class="col-md-6"> <div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="radio" name="gender" id="gender" value="dog_female"/>
-                                  <label class="form-check-label" for="gender">Dog Female</label>
-                                </div></div>
-                                </div>
-                                <div class="row mt-3">
-                                    <div class="col-md-6"><div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="radio" name="gender" id="gender" value="cat_male"/>
-                                  <label class="form-check-label" for="gender">Cat Male</label>
-                                </div></div>
-                                    <div class="col-md-6"> <div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="radio" name="gender" id="gender" value="cat_female"/>
-                                  <label class="form-check-label" for="gender">Cat Female</label>
-                                </div> </div>
-                                </div>
-                                <div class="row mt-3">
-                                    <div class="col-md-8"> <div class="form-group">
-                                    <label for="pet_name">Name</label>
-                                    <input type="text" class="form-control" id="pet_name" placeholder="name" name="pet_name" t-att-value="pet_name"/>
-                                </div> </div>
-                                    <div class="col-md-4"> </div>
-                                </div>
-                                <div class="row mt-3">
-                                    <div class="col-md-8"><div class="form-group">
-                                    <label for="breed" class="control-lable">breed</label>
-                                    <select name="breed" class="form-control link-style">
-                                        <t t-foreach="dog_breed" t-as="d_breed">
-                                            <option t-esc="d_breed.name" t-att-value="d_breed.id"/>
-                                        </t>
-                                    </select>
-                                </div>  </div>
-                                    <div class="col-md-4"> </div>
-                                </div>
-                                <div class="row mt-3">
-                                    <div class="col-md-4"><div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="radio" name="pet_size" id="pet_size" value="small"/>
-                                  <label class="form-check-label" for="pet_size">small</label>
-                                </div> </div>
-                                    <div class="col-md-4">  <div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="radio" name="pet_size" id="pet_size" value="medium"/>
-                                  <label class="form-check-label" for="pet_size">medium</label>
-                                </div></div>
-                                    <div class="col-md-4"><div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="radio" name="pet_size" id="pet_size" value="large"/>
-                                  <label class="form-check-label" for="pet_size">large</label>
-                                </div> </div>
-                                </div>
-                            </div>
-                            <div id="step-2">
-                                <div class="row">
-                                    <div class="col-md-8"><div class="form-group row">
-                                  <label for="pet_birthday" class="col-2 col-form-label">Month</label>
-                                  <div class="col-10">
-                                    <input class="form-control" type="date" name="pet_birthday" id="pet_birthday" t-att-value="pet_birthday"/>
-                                  </div>
-                                </div></div>
-                                    <div class="col-md-4"> </div>
-                                </div>
-                                <div class="row mt-3">
-                                    <div class="col-md-8"><div class="form-group">
-                                    <label for="pet_weight">weight</label>
-                                    <input type="text" class="form-control" id="pet_weight" name="pet_weight" t-att-value="pet_weight"/>
-                                </div></div>
-                                    <div class="col-md-4"> </div>
-                                </div>
-                                <div class="row mt-3">
-                                    <div class="col-md-4"><div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="radio" name="pet_weight_condition" id="pet_weight_condition" value="skinny"/>
-                                  <label class="form-check-label" for="pet_weight_condition">Skinny</label>
-                                </div></div>
-                                    <div class="col-md-4"> <div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="radio" name="pet_weight_condition" id="pet_weight_condition" value="just_right"/>
-                                  <label class="form-check-label" for="pet_weight_condition">just Right</label>
-                                </div></div>
-                                    <div class="col-md-4"><div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="radio" name="pet_weight_condition" id="pet_weight_condition" value="chubby"/>
-                                  <label class="form-check-label" for="pet_weight_condition">Chubby</label>
-                                </div></div>
-                                </div>
-                            </div>
-                            <div id="step-3" class="">
-                                <div class="row">
-                                    <div class="col-md-2"><div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="radio" name="pet_activity_level" id="pet_activity_level" value="couch_potato"/>
-                                  <label class="form-check-label" for="pet_activity_level">Couch Potato</label>
-                                </div></div>
-                                    <div class="col-md-2"><div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="radio" name="pet_activity_level" id="pet_activity_level" value="somewhat_active"/>
-                                  <label class="form-check-label" for="pet_activity_level">Somewhat Active</label>
-                                </div></div>
-                                    <div class="col-md-2"><div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="radio" name="pet_activity_level" id="pet_activity_level" value="active"/>
-                                  <label class="form-check-label" for="pet_activity_level">Active</label>
-                                </div></div>
-                                    <div class="col-md-2"><div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="radio" name="pet_activity_level" id="pet_activity_level" value="very_active"/>
-                                  <label class="form-check-label" for="pet_activity_level">Very Active</label>
-                                </div></div>
-                                    <div class="col-md-2"><div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="radio" name="pet_activity_level" id="pet_activity_level" value="energy_ball"/>
-                                  <label class="form-check-label" for="pet_activity_level">Energy Ball</label>
-                                </div></div>
-                                </div>
-                                <div class="row mt-3">
-                                    <div class="col-md-4"><div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="radio" name="treats" id="treats" value="no_treats"/>
-                                  <label class="form-check-label" for="treats">No Treats</label>
-                                </div></div>
-                                    <div class="col-md-4"><div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="radio" name="treats" id="treats" value="some_treats"/>
-                                  <label class="form-check-label" for="treats">Some Treats</label>
-                                </div></div>
-                                    <div class="col-md-4">
-                                        <div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="radio" name="treats" id="treats" value="lots_of_treats"/>
-                                  <label class="form-check-label" for="treats">Lots Of Treats</label>
-                                </div>
+   <template id="pet_webform" name="pet web form">
+      <t t-call="website.layout">
+         <div id="wrap">
+            <div class="oe_structure">
+               <div class="container">
+                  <div class="row d-flex justify-content-center mt-200">
+                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                     Launch multistep Wizard </button>
+                  </div>
+                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                           <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Pet Care</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&amp;times;</span> </button>
+                           </div>
+                           <div class="modal-body">
+                              <form role="form" method="post" action="/create/pet">
+                                 <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                 <div id="smartwizard">
+                                    <ul>
+                                       <li><a href="#step-1">1</a></li>
+                                       <li><a href="#step-2">2</a></li>
+                                       <li><a href="#step-3">3</a></li>
+                                       <li><a href="#step-4">4</a></li>
+                                    </ul>
+                                    <div class="mt-4">
+                                       <div id="step-1">
+                                          <div class="row">
+                                             <div class="col-md-6">
+                                                <div class="form-check form-check-inline">
+                                                   <input class="form-check-input" type="radio" name="gender" id="gender" value="dog_male"/>
+                                                   <label class="form-check-label" for="gender">DogMale</label>
+                                                </div>
+                                             </div>
+                                             <div class="col-md-6">
+                                                <div class="form-check form-check-inline">
+                                                   <input class="form-check-input" type="radio" name="gender" id="gender" value="dog_female"/>
+                                                   <label class="form-check-label" for="gender">Dog Female</label>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="row mt-3">
+                                             <div class="col-md-6">
+                                                <div class="form-check form-check-inline">
+                                                   <input class="form-check-input" type="radio" name="gender" id="gender" value="cat_male"/>
+                                                   <label class="form-check-label" for="gender">Cat Male</label>
+                                                </div>
+                                             </div>
+                                             <div class="col-md-6">
+                                                <div class="form-check form-check-inline">
+                                                   <input class="form-check-input" type="radio" name="gender" id="gender" value="cat_female"/>
+                                                   <label class="form-check-label" for="gender">Cat Female</label>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="row mt-3">
+                                             <div class="col-md-8">
+                                                <div class="form-group">
+                                                   <label for="pet_name">Name</label>
+                                                   <input type="text" class="form-control" id="pet_name" placeholder="name" name="pet_name" t-att-value="pet_name"/>
+                                                </div>
+                                             </div>
+                                             <div class="col-md-4"> </div>
+                                          </div>
+                                          <div class="row mt-3">
+                                             <div class="col-md-8">
+                                                <div class="form-group">
+                                                   <label for="breed" class="control-lable">breed</label>
+                                                   <select name="breed" class="form-control link-style">
+                                                      <t t-foreach="dog_breed" t-as="d_breed">
+                                                         <option t-esc="d_breed.name" t-att-value="d_breed.id"/>
+                                                      </t>
+                                                   </select>
+                                                </div>
+                                             </div>
+                                             <div class="col-md-4"> </div>
+                                          </div>
+                                          <div class="row mt-3">
+                                             <div class="col-md-4">
+                                                <div class="form-check form-check-inline">
+                                                   <input class="form-check-input" type="radio" name="pet_size" id="pet_size" value="small"/>
+                                                   <label class="form-check-label" for="pet_size">small</label>
+                                                </div>
+                                             </div>
+                                             <div class="col-md-4">
+                                                <div class="form-check form-check-inline">
+                                                   <input class="form-check-input" type="radio" name="pet_size" id="pet_size" value="medium"/>
+                                                   <label class="form-check-label" for="pet_size">medium</label>
+                                                </div>
+                                             </div>
+                                             <div class="col-md-4">
+                                                <div class="form-check form-check-inline">
+                                                   <input class="form-check-input" type="radio" name="pet_size" id="pet_size" value="large"/>
+                                                   <label class="form-check-label" for="pet_size">large</label>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div id="step-2">
+                                          <div class="row">
+                                             <div class="col-md-8">
+                                                <div class="form-group row">
+                                                   <label for="pet_birthday" class="col-2 col-form-label">Month</label>
+                                                   <div class="col-10">
+                                                      <input class="form-control" type="date" name="pet_birthday" id="pet_birthday" t-att-value="pet_birthday"/>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                             <div class="col-md-4"> </div>
+                                          </div>
+                                          <div class="row mt-3">
+                                             <div class="col-md-8">
+                                                <div class="form-group">
+                                                   <label for="pet_weight">weight</label>
+                                                   <input type="text" class="form-control" id="pet_weight" name="pet_weight" t-att-value="pet_weight"/>
+                                                </div>
+                                             </div>
+                                             <div class="col-md-4"> </div>
+                                          </div>
+                                          <div class="row mt-3">
+                                             <div class="col-md-4">
+                                                <div class="form-check form-check-inline">
+                                                   <input class="form-check-input" type="radio" name="pet_weight_condition" id="pet_weight_condition" value="skinny"/>
+                                                   <label class="form-check-label" for="pet_weight_condition">Skinny</label>
+                                                </div>
+                                             </div>
+                                             <div class="col-md-4">
+                                                <div class="form-check form-check-inline">
+                                                   <input class="form-check-input" type="radio" name="pet_weight_condition" id="pet_weight_condition" value="just_right"/>
+                                                   <label class="form-check-label" for="pet_weight_condition">just Right</label>
+                                                </div>
+                                             </div>
+                                             <div class="col-md-4">
+                                                <div class="form-check form-check-inline">
+                                                   <input class="form-check-input" type="radio" name="pet_weight_condition" id="pet_weight_condition" value="chubby"/>
+                                                   <label class="form-check-label" for="pet_weight_condition">Chubby</label>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div id="step-3" class="">
+                                          <div class="row">
+                                             <div class="col-md-2">
+                                                <div class="form-check form-check-inline">
+                                                   <input class="form-check-input" type="radio" name="pet_activity_level" id="pet_activity_level" value="couch_potato"/>
+                                                   <label class="form-check-label" for="pet_activity_level">Couch Potato</label>
+                                                </div>
+                                             </div>
+                                             <div class="col-md-2">
+                                                <div class="form-check form-check-inline">
+                                                   <input class="form-check-input" type="radio" name="pet_activity_level" id="pet_activity_level" value="somewhat_active"/>
+                                                   <label class="form-check-label" for="pet_activity_level">Somewhat Active</label>
+                                                </div>
+                                             </div>
+                                             <div class="col-md-2">
+                                                <div class="form-check form-check-inline">
+                                                   <input class="form-check-input" type="radio" name="pet_activity_level" id="pet_activity_level" value="active"/>
+                                                   <label class="form-check-label" for="pet_activity_level">Active</label>
+                                                </div>
+                                             </div>
+                                             <div class="col-md-2">
+                                                <div class="form-check form-check-inline">
+                                                   <input class="form-check-input" type="radio" name="pet_activity_level" id="pet_activity_level" value="very_active"/>
+                                                   <label class="form-check-label" for="pet_activity_level">Very Active</label>
+                                                </div>
+                                             </div>
+                                             <div class="col-md-2">
+                                                <div class="form-check form-check-inline">
+                                                   <input class="form-check-input" type="radio" name="pet_activity_level" id="pet_activity_level" value="energy_ball"/>
+                                                   <label class="form-check-label" for="pet_activity_level">Energy Ball</label>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="row mt-3">
+                                             <div class="col-md-4">
+                                                <div class="form-check form-check-inline">
+                                                   <input class="form-check-input" type="radio" name="treats" id="treats" value="no_treats"/>
+                                                   <label class="form-check-label" for="treats">No Treats</label>
+                                                </div>
+                                             </div>
+                                             <div class="col-md-4">
+                                                <div class="form-check form-check-inline">
+                                                   <input class="form-check-input" type="radio" name="treats" id="treats" value="some_treats"/>
+                                                   <label class="form-check-label" for="treats">Some Treats</label>
+                                                </div>
+                                             </div>
+                                             <div class="col-md-4">
+                                                <div class="form-check form-check-inline">
+                                                   <input class="form-check-input" type="radio" name="treats" id="treats" value="lots_of_treats"/>
+                                                   <label class="form-check-label" for="treats">Lots Of Treats</label>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="row mt-3">
+                                             <div class="col-md-6">
+                                                <div class="form-check form-check-inline">
+                                                   <input class="form-check-input" type="radio" name="neutered" id="neutered" value="yes"/>
+                                                   <label class="form-check-label" for="neutered">Yes</label>
+                                                </div>
+                                             </div>
+                                             <div class="col-md-6">
+                                                <div class="form-check form-check-inline">
+                                                   <input class="form-check-input" type="radio" name="neutered" id="neutered" value="no"/>
+                                                   <label class="form-check-label" for="neutered">No</label>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div id="step-4" class="">
+                                          <div class="row">
+                                             <div class="col-md-12"> <span>Thanks For submitting your details with BBBootstrap.com. we will send you a confirmation email. We will review your details and revert back.</span> </div>
+                                          </div>
+                                          <div class="text-center oe_login_buttons">
+                                             <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                                          </div>
+                                       </div>
                                     </div>
-                                </div>
-                                <div class="row mt-3">
-                                    <div class="col-md-6"><div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="radio" name="neutered" id="neutered" value="yes"/>
-                                  <label class="form-check-label" for="neutered">Yes</label>
-                                </div></div>
-                                    <div class="col-md-6"><div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="radio" name="neutered" id="neutered" value="no"/>
-                                  <label class="form-check-label" for="neutered">No</label>
-                                </div></div>
-                                </div>
-                            </div>
-                            <div id="step-4" class="">
-                                <div class="row">
-                                    <div class="col-md-12"> <span>Thanks For submitting your details with BBBootstrap.com. we will send you a confirmation email. We will review your details and revert back.</span> </div>
-                                </div>
-                               <div class="text-center oe_login_buttons">
-                                    <button type="submit" class="btn btn-primary btn-block">Submit</button>
-                                </div>
-                            </div>
+                                 </div>
+                              </form>
+                           </div>
                         </div>
-                    </div>
-                   </form>
-                </div></div></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </t>
+   </template>
+   <record id="pet_thankyou_page" model="website.page">
+      <field name="name">thank you page</field>
+      <field name="website_published">True</field>
+      <field name="url">/pet</field>
+      <field name="type">qweb</field>
+      <field name="key">pet_care_website.pet_thankyou_page</field>
+      <field name="arch" type="xml">
+         <t t-name="pet_care_website.pet_thankyou_page">
+            <t t-call="website.layout">
+               <div id="wrap">
+                  <div class="container">
+                     <h1>Our Services</h1>
+                  </div>
+               </div>
             </t>
-        </template>
-
-    <record id="pet_thankyou_page" model="website.page">
-            <field name="name">thank you page</field>
-            <field name="website_published">True</field>
-            <field name="url">/pet</field>
-            <field name="type">qweb</field>
-            <field name="key">pet_care_website.pet_thankyou_page</field>
-            <field name="arch" type="xml">
-                <t t-name="pet_care_website.pet_thankyou_page">
-                    <t t-call="website.layout">
-                        <div id="wrap">
-                            <div class="container">
-                                <h1>Our Services</h1>
-                            </div>
-                        </div>
-                    </t>
-                </t>
-            </field>
-        </record>
+         </t>
+      </field>
+   </record>
 </odoo>

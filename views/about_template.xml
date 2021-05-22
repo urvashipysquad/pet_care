@@ -2,79 +2,83 @@
 <odoo>
    <template id="about_page" name="About">
       <t t-call="website.layout">
-         <div class="about-header">
-            <section class="about-header-section">
-               <h1>
-                  <font style="font-size: 62px; font-weight: bold;" class="o_default_snippet_text">Give Back The Love!</font>
-               </h1>
-            </section>
-         </div>
+         <section class="s_banner parallax s_parallax_is_fixed pt96 pb96 o_colored_level" data-scroll-background-ratio="1" data-snippet="s_banner" data-name="Banner" t-if="img_content">
+            <t t-foreach="img_content" t-as="imgs">
+               <t t-if="imgs.page_name=='About Page'">
+                  <img t-attf-src="/web/image/image.content/#{imgs['id']}/bg_image" alt="Image" class="s_parallax_bg oe_img_bg"/>
+                  <!--              <span class="s_parallax_bg oe_img_bg"  style="background-image: url('/web/image/image.content/#{imgs['id']}/bg_image'); background-position: 20% 40%;opacity: 0.5;"></span>-->
+                  <div class="container">
+                     <div class="row s_nb_column_fixed">
+                        <div class="col-lg-6 jumbotron rounded pt32 pb32" data-name="Box">
+                           <div class="carousel-content col-lg-8 o_colored_level">
+                              <h2>
+                                 <h2 class="o_default_snippet_text  text-left">
+                                    <t t-esc="imgs['head_text']"/>
+                                 </h2>
+                              </h2>
+                              <b class="o_default_snippet_text color-grn">
+                                 <t t-esc="imgs['snippet_text1']"/>
+                                 <br/>
+                                 <small class="o_default_snippet_text color-grn">
+                                    <t t-esc="imgs.snippet_text2"/>
+                                 </small>
+                                 <p t-if="imgs.button_text">
+                                    <a href="/contactus" class="button1 main_button mb-2 o_default_snippet_brown_text">
+                                       <t t-esc="imgs.button_text"/>
+                                    </a>
+                                 </p>
+                              </b>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </t>
+            </t>
+         </section>
          <section class="about-part-1">
             <div class="container">
-               <p class="about-mrg text-center color-grn">Whoever has a dog or cat will understand the unconditional love the give. They file our lives with kindness, make
+               <p class="about-mrg text-center color-grn font-weight-bold">Whoever has a dog or cat will understand the unconditional love the give. They file our lives with kindness, make
                   us laugh, comfort us when we are blue, and love us more than they love themselves! The minimum we can do is
-                  take care of their health and well-being, right That's why at PawPots, we decided to Give Back the Love!</p>
+                  take care of their health and well-being, right That's why at PawPots, we decided to Give Back the Love!
+               </p>
             </div>
          </section>
-         <section class="s_text_image pt32 pb32 o_colored_level about-part-2" data-snippet="s_image_text" data-name="Image - Text">
-            <div class="container">
-               <div class="row align-items-center">
-                  <div class="col-lg-6 pt16 pb16 o_colored_level">
-                     <img src="pet_care_website/static/img/about-2.jpg" class="img img-fluid mx-auto rounded-circle" alt="" loading="lazy" data-original-id="94" data-original-src="/website/static/src/img/snippets_demo/s_image_text.jpg" data-mimetype="image/jpeg" />
-                  </div>
-                  <div class="col-lg-6 pt16 pb16 o_colored_level">
-                     <h2 class="o_default_snippet_text">The Furry Tail</h2>
-                     <p class="o_default_snippet_text color-grn">
-                        It all started with Stark, our very own little ball of fluff.
-                        <br class="hidden lg:inline-block" />
-                        We wanted him to be happy! First thing to think of was his health.
-                        Will he really strike on the bag of highly processed food and
-                        <br class="hidden lg:inline-block" />
-                        chemicals we are getting him?
-                        <br class="hidden lg:inline-block" />
-                        We did some research and what we discovered was jaw-dropping;
-                        <br class="hidden lg:inline-block" />
-                        Stress, obesity, infections and cancer... there is a reason why pets
-                        <br class="hidden lg:inline-block" />
-                        now have a shorter lifespan, and it is not only from their genes.
-                        <br class="hidden lg:inline-block" />
-                        90% of the reasons behind their illness lies on their lifestyle, and
-                        <br class="hidden lg:inline-block" />
-                        mainly on their nutrition!
-                        <br class="hidden lg:inline-block" />
-                        We need a plan.
-                        <br class="hidden lg:inline-block" />
-                        And not only for Stark.
-                        <br class="hidden lg:inline-block" />
-                        We needed PawPots.
-                     </p>
+         <t t-foreach="story" t-as="dog_story">
+            <section class="s_text_image pt32 pb32 o_colored_level about-part-2" t-if="dog_story.name=='First Story'" data-snippet="s_image_text" data-name="Image - Text">
+               <div class="container">
+                  <div class="row align-items-center">
+                     <div class="col-lg-6 pt16 pb16 o_colored_level">
+                        <img t-attf-src="/web/image/pet.story/#{dog_story['id']}/image" alt="Image" class="img img-fluid mx-auto rounded-circle" width="350px" height="350px" />
+                     </div>
+                     <div class="col-lg-6 pt16 pb16 o_colored_level">
+                        <h2 class="o_default_snippet_text">
+                           <t t-esc="dog_story.title"/>
+                        </h2>
+                        <p class="o_default_snippet_text color-grn">
+                           <t t-esc="dog_story.description"/>
+                        </p>
+                     </div>
                   </div>
                </div>
-            </div>
-         </section>
-         <section class="s_text_image pt32 pb32 o_colored_level about-part-3" data-snippet="s_text_image" data-name="Text - Image">
-            <div class="container">
-               <div class="row align-items-center">
-                  <div class="col-lg-6 pt16 pb16 o_colored_level">
-                     <h2 class="o_default_snippet_text">The Science Behind</h2>
-                     <p class="o_default_snippet_text color-grn">
-                        With lots of research, we concluded that real fresh food is the best option,
-                        <br class="hidden lg:display-inline" />
-                        so we started cooking for Stark and very soon noticed the difference!
-                        <br class="hidden lg:display-inline" />
-                        We invested more time researching and working with veterinary
-                        <br class="hidden lg:display-inline" />
-                        nutritionists to select the best ingredients and balanced formula,
-                        <br class="hidden lg:display-inline" />
-                        following standard, so that pets could benefit the most.
-                     </p>
-                  </div>
-                  <div class="col-lg-6 pt16 pb16 o_colored_level">
-                     <img src="pet_care_website/static/img/about-2.jpg" class="img img-fluid mx-auto rounded-circle" alt="" loading="lazy" data-original-id="95" data-original-src="/website/static/src/img/snippets_demo/s_text_image.jpg" data-mimetype="image/jpeg" />
+            </section>
+            <section class="s_text_image pt32 pb32 o_colored_level about-part-3" t-if="dog_story.name=='Second Story'" data-snippet="s_text_image" data-name="Text - Image">
+               <div class="container">
+                  <div class="row align-items-center">
+                     <div class="col-lg-6 pt16 pb16 o_colored_level">
+                        <h2 class="o_default_snippet_text">
+                           <t t-esc="dog_story.title"/>
+                        </h2>
+                        <p class="o_default_snippet_text color-grn">
+                           <t t-esc="dog_story.description"/>
+                        </p>
+                     </div>
+                     <div class="col-lg-6 pt16 pb16 o_colored_level">
+                        <img t-attf-src="/web/image/pet.story/#{dog_story['id']}/image" alt="Image" class="img img-fluid mx-auto rounded-circle" width="350px" height="350px"/>
+                     </div>
                   </div>
                </div>
-            </div>
-         </section>
+            </section>
+         </t>
          <section class="s_quotes_carousel_wrapper o_colored_level" data-vxml="001" data-vcss="001" data-snippet="s_quotes_carousel" data-name="Quotes">
             <div id="myCarousel1619082530251" class="s_quotes_carousel s_carousel_default carousel slide bg-200" data-interval="10000">
                <ol class="carousel-indicators o_we_no_overlay">
@@ -84,55 +88,76 @@
                </ol>
                <div class="carousel-inner">
                   <div class="carousel-item pt80 pb80 o_colored_level active" data-name="Slide" style="min-height: 354px;">
-                     <div class="container">
-                        <blockquote class="s_blockquote s_blockquote_classic blockquote mx-auto w-50" data-name="Blockquote">
-                           <i class="fa fa-1x fa-quote-left rounded float-left s_blockquote_icon" />
-                           <div class="s_blockquote_content o_cc1">about-img
-                              <p class="o_default_snippet_text color-grn">Write a quote here from one of your customers. Quotes are a great way to build confidence in your products or services.</p>
-                              <footer class="blockquote-footer">
-                                 <img src="pet_care_website/static/img/about-8.jpg" class="s_blockquote_avatar img rounded-circle mr-2" alt="" loading="lazy" data-original-id="91" data-original-src="pet_care_website/static/img/about-8.jpg" data-mimetype="image/png" />
-                                 <span class="s_blockquote_author o_default_snippet_text">
-                                    <b class="o_default_snippet_text">Admin name</b>
-                                    • CEO of MyCompany
-                                 </span>
-                              </footer>
-                           </div>
-                        </blockquote>
-                     </div>
+                     <t t-foreach="quotes" t-as="quote">
+                        <div class="container" t-if="quote.name=='First Quote'">
+                           <blockquote class="s_blockquote s_blockquote_classic blockquote mx-auto w-50" data-name="Blockquote">
+                              <i class="fa fa-1x fa-quote-left rounded float-left s_blockquote_icon" />
+                              <div class="s_blockquote_content o_cc1">
+                                 <p class="o_default_snippet_text color-grn">
+                                    <t t-esc="quote.quote"/>
+                                 </p>
+                                 <footer class="blockquote-footer">
+                                    <img src="/web/image/pet.quotes/#{quote['id']}/image" class="s_blockquote_avatar img rounded-circle mr-2" alt="img" loading="lazy"  />
+                                    <span class="s_blockquote_author o_default_snippet_text">
+                                       <b class="o_default_snippet_text">
+                                          <t t-esc="quote.admin_name"/>
+                                       </b>
+                                       •
+                                       <t t-esc="quote.admin_company_position"/>
+                                    </span>
+                                 </footer>
+                              </div>
+                           </blockquote>
+                        </div>
+                     </t>
                   </div>
                   <div class="carousel-item pt80 pb80 o_colored_level oe_img_bg" style="background-position: 50% 50%; background-image: url(&quot;pet_care_website/static/img/about-8.jpg&quot;); min-height: 354px;" data-name="Slide">
-                     <div class="container">
-                        <blockquote class="s_blockquote s_blockquote_classic blockquote mr-auto w-50" data-name="Blockquote">
-                           <i class="fa fa-1x fa-quote-left rounded float-left s_blockquote_icon" />
-                           <div class="s_blockquote_content o_cc1">
-                              <p class="o_default_snippet_text color-grn">Write a quote here from one of your customers. Quotes are a great way to build confidence in your products or services.</p>
-                              <footer class="blockquote-footer">
-                                 <img src="pet_care_website/static/img/about-5.jpg" class="s_blockquote_avatar img rounded-circle mr-2" alt="" loading="lazy" data-original-id="92" data-original-src="pet_care_website/static/img/about-8.jpg" data-mimetype="image/png" />
-                                 <span class="s_blockquote_author o_default_snippet_text">
-                                    <b class="o_default_snippet_text">Jhon demo</b>
-                                    • CEO of MyCompany
-                                 </span>
-                              </footer>
-                           </div>
-                        </blockquote>
-                     </div>
+                     <t t-foreach="quotes" t-as="quote">
+                        <div class="container" t-if="quote.name=='Second Quote'">
+                           <blockquote class="s_blockquote s_blockquote_classic blockquote mr-auto w-50" data-name="Blockquote">
+                              <i class="fa fa-1x fa-quote-left rounded float-left s_blockquote_icon" />
+                              <div class="s_blockquote_content o_cc1">
+                                 <p class="o_default_snippet_text color-grn">
+                                    <t t-esc="quote.quote"/>
+                                 </p>
+                                 <footer class="blockquote-footer">
+                                    <img src="/web/image/pet.quotes/#{quote['id']}/image" class="s_blockquote_avatar img rounded-circle mr-2" alt="img" loading="lazy"/>
+                                    <span class="s_blockquote_author o_default_snippet_text">
+                                       <b class="o_default_snippet_text">
+                                          <t t-esc="quote.admin_name"/>
+                                       </b>
+                                       •
+                                       <t t-esc="quote.admin_company_position"/>
+                                    </span>
+                                 </footer>
+                              </div>
+                           </blockquote>
+                        </div>
+                     </t>
                   </div>
                   <div class="carousel-item pt80 pb80 o_colored_level oe_img_bg" style="background-position: 50% 50%; background-image: url(&quot;pet_care_website/static/img/about-7.jpg&quot;); min-height: 354px;" data-name="Slide">
-                     <div class="container">
-                        <blockquote class="s_blockquote s_blockquote_classic blockquote ml-auto w-50" data-name="Blockquote">
-                           <i class="fa fa-1x fa-quote-left rounded float-left s_blockquote_icon" />
-                           <div class="s_blockquote_content o_cc1">
-                              <p class="o_default_snippet_text color-grn">Write a quote here from one of your customers. Quotes are a great way to build confidence in your products or services.</p>
-                              <footer class="blockquote-footer">
-                                 <img src="pet_care_website/static/img/about-6.jpg" class="s_blockquote_avatar img rounded-circle mr-2" alt="" loading="lazy" data-original-id="93" data-original-src="pet_care_website/static/img/about-8.jpg" data-mimetype="image/png" />
-                                 <span class="s_blockquote_author o_default_snippet_text">
-                                    <b class="o_default_snippet_text">User id</b>
-                                    • CEO of MyCompany
-                                 </span>
-                              </footer>
-                           </div>
-                        </blockquote>
-                     </div>
+                     <t t-foreach="quotes" t-as="quote">
+                        <div class="container" t-if="quote.name=='Third Quote'">
+                           <blockquote class="s_blockquote s_blockquote_classic blockquote ml-auto w-50" data-name="Blockquote">
+                              <i class="fa fa-1x fa-quote-left rounded float-left s_blockquote_icon" />
+                              <div class="s_blockquote_content o_cc1">
+                                 <p class="o_default_snippet_text color-grn">
+                                    <t t-esc="quote.quote"/>
+                                 </p>
+                                 <footer class="blockquote-footer">
+                                    <img src="/web/image/pet.quotes/#{quote['id']}/image" class="s_blockquote_avatar img rounded-circle mr-2" alt="" loading="lazy" />
+                                    <span class="s_blockquote_author o_default_snippet_text">
+                                       <b class="o_default_snippet_text">
+                                          <t t-esc="quote.admin_name"/>
+                                       </b>
+                                       •
+                                       <t t-esc="quote.admin_company_position"/>
+                                    </span>
+                                 </footer>
+                              </div>
+                           </blockquote>
+                        </div>
+                     </t>
                   </div>
                </div>
                <div class="carousel-control-prev o_we_no_overlay" data-target="#myCarousel1619082530251" data-slide="prev" role="img" aria-label="Previous" title="Previous">
@@ -145,128 +170,116 @@
                </div>
             </div>
          </section>
-         <section class="s_text_image pt32 pb32 o_colored_level about-part-4" data-snippet="s_image_text" data-name="Image - Text">
-            <div class="container">
-               <div class="row align-items-center">
-                  <div class="col-lg-6 pt16 pb16 o_colored_level">
-                     <img src="pet_care_website/static/img/about-5.jpg" class="img img-fluid mx-auto rounded-circle" alt="" loading="lazy" data-original-id="94" data-original-src="/website/static/src/img/snippets_demo/s_image_text.jpg" data-mimetype="image/jpeg" />
-                  </div>
-                  <div class="col-lg-6 pt16 pb16 o_colored_level">
-                     <h2 class="o_default_snippet_text">Our Fine Methods</h2>
-                     <p class="o_default_snippet_text color-grn">
-                        We carefully source each and every ingredient that goes into our
-                        <br class="hidden lg:display-inline" />
-                        meals; We use only restaurant-quality grade A proteins and
-                        <br class="hidden lg:display-inline" />
-                        vegetables, coming from trusted and reliable suppliers.
-                        <br class="hidden lg:display-inline" />
-                        We gently cook the ingredients to ensure that all vital nutrients are
-                        <br class="hidden lg:display-inline" />
-                        sealed-in and the food is highly digestible. No high temperatures.
-                        <br class="hidden lg:display-inline" />
-                        No extrusion. Just like you do it for your baby!
-                        <br class="hidden lg:display-inline" />
-                        The recipe are mixed with precision in small batches, keeping our
-                        <br class="hidden lg:display-inline" />
-                        meals perfectly complete and balanced.
-                     </p>
+         <t t-foreach="story" t-as="dog_story">
+            <section class="s_text_image pt32 pb32 o_colored_level about-part-2" t-if="dog_story.name=='Third Story'" data-snippet="s_image_text" data-name="Image - Text">
+               <div class="container">
+                  <div class="row align-items-center">
+                     <div class="col-lg-6 pt16 pb16 o_colored_level">
+                        <img t-attf-src="/web/image/pet.story/#{dog_story['id']}/image" alt="Image" class="img img-fluid mx-auto rounded-circle" width="350px" height="350px"/>
+                     </div>
+                     <div class="col-lg-6 pt16 pb16 o_colored_level">
+                        <h2 class="o_default_snippet_text">
+                           <t t-esc="dog_story.title"/>
+                        </h2>
+                        <p class="o_default_snippet_text color-grn">
+                           <t t-esc="dog_story.description"/>
+                        </p>
+                     </div>
                   </div>
                </div>
-            </div>
-         </section>
+            </section>
+         </t>
          <section class="s_banner parallax s_parallax_is_fixed pt96 pb96 o_colored_level about-part-5" data-scroll-background-ratio="1" data-snippet="s_banner" data-name="Banner">
-            <span class="s_parallax_bg oe_img_bg" style="background-image: url('pet_care_website/static/img/about-9.jpg'); background-position: 50% 0;" />
+            <span class="s_parallax_bg oe_img_bg" style="background-image: url('pet_care_website/static/img/about-img-5.png'); background-position: 50% 0;" />
             <div class="container">
-               <div class="row s_nb_column_fixed">
-                  <div class="col-lg-6 pt16 pb16 o_colored_level">
-                     <h2 class="o_default_snippet_text">Pre-portioned and delivered to perfection</h2>
-                     <p class="o_default_snippet_text color-grn">
-                        Our meals are pre-portioned based on the unique caloric need of
-                        <br class="hidden lg:display-inline" />
-                        your pet. All you have to do is open the pack serve.
-                        <br class="hidden lg:display-inline" />
-                        No mess.
-                        <br class="hidden lg:display-inline" />
-                        No measuring.
-                        <br class="hidden lg:display-inline" />
-                        Our "just in time" deliveries make sure your pet receive fresh food,
-                        <br class="hidden lg:display-inline" />
-                        ready to serve, with little impact on our green planet.
-                     </p>
-                  </div>
-                  <div class="col-lg-6 pt16 pb16 o_colored_level" />
+            <div class="row s_nb_column_fixed">
+               <div class="col-lg-6 pt16 pb16 o_colored_level" />
+               <div class="col-lg-6 pt16 pb16 o_colored_level">
+                  <h2 class="o_default_snippet_text">Pre-portioned and delivered to perfection</h2>
+                  <p class="o_default_snippet_text color-grn">
+                     Our meals are pre-portioned based on the unique caloric need of
+                     <br class="hidden lg:display-inline" />
+                     your pet. All you have to do is open the pack serve.
+                     <br class="hidden lg:display-inline" />
+                     No mess.
+                     <br class="hidden lg:display-inline" />
+                     No measuring.
+                     <br class="hidden lg:display-inline" />
+                     Our "just in time" deliveries make sure your pet receive fresh food,
+                     <br class="hidden lg:display-inline" />
+                     ready to serve, with little impact on our green planet.
+                  </p>
+               </div>
                </div>
             </div>
          </section>
-         <section class="s_text_image pt32 pb32 o_colored_level about-part-6" data-snippet="s_image_text" data-name="Image - Text">
-            <div class="container">
-               <div class="row align-items-center">
-                  <div class="col-lg-6 pt16 pb16 o_colored_level">
-                     <img src="pet_care_website/static/img/about-5.jpg" class="img img-fluid mx-auto rounded-circle" alt="" loading="lazy" data-original-id="94" data-original-src="/website/static/src/img/snippets_demo/s_image_text.jpg" data-mimetype="image/jpeg" />
-                  </div>
-                  <div class="col-lg-6 pt16 pb16 o_colored_level">
-                     <h2 class="o_default_snippet_text ">We're just getting started!</h2>
-                     <p class="o_default_snippet_text color-grn">
-                        For the last 3 years, we've worked day and night to perfect our
-                        <br class="hidden lg:display-none" />
-                        recipes and services in order to make sure we provide the best to
-                        <br class="hidden lg:display-none" />
-                        our furry friends.
-                        <br class="hidden lg:display-none" />
-                        We've already tailored more than 80,000 meals, helping many pets
-                        <br class="hidden lg:display-none" />
-                        live a healthier and happier life!
-                        <br class="hidden lg:display-none" />
-                        Seen from a pup perspective?
-                        <br class="hidden lg:display-none" />
-                        We are simply giving back the love!
-                     </p>
-                     <br class="hidden lg:display-none" />
+         <t t-foreach="story" t-as="dog_story">
+            <section class="s_text_image pt32 pb32 o_colored_level about-part-2" t-if="dog_story.name=='Forth Story'" data-snippet="s_image_text" data-name="Image - Text">
+               <div class="container">
+                  <div class="row align-items-center">
+                     <div class="col-lg-6 pt16 pb16 o_colored_level">
+                        <img t-attf-src="/web/image/pet.story/#{dog_story['id']}/image" alt="Image" class="img img-fluid mx-auto rounded-circle" width="350px" height="350px" />
+                     </div>
+                     <div class="col-lg-6 pt16 pb16 o_colored_level">
+                        <h2 class="o_default_snippet_text">
+                           <t t-esc="dog_story.title"/>
+                        </h2>
+                        <p class="o_default_snippet_text color-grn">
+                           <t t-esc="dog_story.description"/>
+                        </p>
+                     </div>
                   </div>
                </div>
-            </div>
-         </section>
-         <section class="s_cover parallax s_parallax_is_fixed bg-black-50 pt96 o_colored_level pb80 about-part-7" data-scroll-background-ratio="1" data-snippet="s_cover" data-name="Cover">
-            <span class="s_parallax_bg oe_img_bg" style="background-image: url('pet_care_website/static/img/about-8.jpg'); background-position: 50% 0;" />
-            <div class="o_we_bg_filter bg-black-50" />
-            <div class="container s_allow_columns">
-               <h1 style="text-align: center;">
-                  <font style="font-size: 62px; font-weight: bold;" class="o_default_snippet_text">Money-Back Guarantee!</font>
-               </h1>
-               <p class="lead o_default_snippet_text text-white" style="text-align: center;">
-                  Trust us, your pupp will thank you!
-                  <br class="hidden lg:display-none" />
-                  Our customers have reported not even
-                  <br class="hidden lg:display-none" />
-                  recognizing their pet after just few days!
-               </p>
-               <p style="text-align: center;">
-                  <a href="/contactus" class="button1 main_button mb-2 o_default_snippet_text">Get Your Starter Box</a>
-               </p>
-            </div>
-         </section>
+            </section>
+         </t>
+         <t t-foreach="img_content" t-as="imgs">
+            <section class="s_cover parallax s_parallax_is_fixed bg-black-50 pt96 o_colored_level pb80" t-if="imgs.page_name=='Guarantee Page'">
+               <img t-attf-src="/web/image/image.content/#{imgs['id']}/bg_image" alt="Image" class="s_parallax_bg oe_img_bg"/>
+               <div class="o_we_bg_filter bg-black-20" />
+               <div class="container s_allow_columns">
+                  <div class="row">
+                     <div class="col-md-6">
+                        <h1 style="text-align: center;">
+                           <font style="font-size: 42px; font-weight: bold;" class="o_default_snippet_brown_text">
+                              <t t-esc="imgs['head_text']"/>
+                           </font>
+                        </h1>
+                        <p class="lead o_default_snippet_brown_text text-center text-white">
+                           <t t-esc="imgs['snippet_text1']"/>
+                           <br class="hidden lg:display-none"/>
+                           <t t-esc="imgs['snippet_text2']"/>
+                           <br class="hidden lg:display-none"/>
+                        </p>
+                        <p t-if="imgs.button_text" class="text-center m-0 p-0">
+                           <a href="/contactus" class="button1 main_button mb-2 o_default_snippet_brown_text">
+                              <t t-esc="imgs.button_text"/>
+                           </a>
+                        </p>
+                     </div>
+                     <div class="col-md-6"></div>
+                  </div>
+               </div>
+            </section>
+         </t>
          <t t-if="user_id._is_public()">
-         <section class="about-part-8">
-                        <div class="container s_allow_columns">
-                           <br/><br/>
-
-                           <h2 class="o_default_snippet_text" style="text-align: center;">Sign Up to our Newsletter</h2>
-                     <p class="o_default_snippet_text color-grn" style="text-align: center;">
-                        Receive exclusive access to special offers,<br class="hidden lg:inline-block" />
-                        promotions, product updates, news and more!
-                     </p>
-
-            <form class="oe_subscribe_form sm:m-auto" role="form" t-attf-action="/web/login" method="post" onsubmit="this.action = '/web/login' + location.hash">
-               <div class="form-group field-login">
-                  <input type="login" placeholder="Email" name="login" t-att-value="login" id="login_sub" t-attf-class="form-control #{'form-control-sm' if form_small else ''}" required="required" autocapitalize="off" />
+            <section class="about-part-8">
+               <div class="container s_allow_columns">
+                  <br/><br/>
+                  <h2 class="o_default_snippet_text" style="text-align: center;">Sign Up to our Newsletter</h2>
+                  <p class="o_default_snippet_text color-grn" style="text-align: center;">
+                     Receive exclusive access to special offers,<br class="hidden lg:inline-block" />
+                     promotions, product updates, news and more!
+                  </p>
+                  <form class="oe_subscribe_form sm:m-auto" role="form" t-attf-action="/web/login" method="post" onsubmit="this.action = '/web/login' + location.hash">
+                     <div class="form-group field-login">
+                        <input type="login" placeholder="Email" name="login" t-att-value="login" id="login_sub" t-attf-class="form-control #{'form-control-sm' if form_small else ''}" required="required" autocapitalize="off" />
+                     </div>
+                     <div t-attf-class="clearfix oe_login_buttons text-center mb-1 {{'pt-0' if form_small else 'pt-2'}}">
+                        <a href="/contactus" class="button1 main_button mb-2 o_default_snippet_text">Sign Up</a>
+                     </div>
+                  </form>
                </div>
-               <div t-attf-class="clearfix oe_login_buttons text-center mb-1 {{'pt-0' if form_small else 'pt-2'}}">
-                  <a href="/contactus" class="button1 main_button mb-2 o_default_snippet_text">Sign Up</a>
-               </div>
-            </form>
-            </div>
-
-         </section>
+            </section>
          </t>
       </t>
    </template>
